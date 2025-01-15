@@ -62,7 +62,7 @@
             // 
             this.headingLabel.AutoSize = true;
             this.headingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.headingLabel.Location = new System.Drawing.Point(322, 35);
+            this.headingLabel.Location = new System.Drawing.Point(512, 28);
             this.headingLabel.Name = "headingLabel";
             this.headingLabel.Size = new System.Drawing.Size(206, 32);
             this.headingLabel.TabIndex = 0;
