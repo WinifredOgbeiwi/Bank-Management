@@ -105,7 +105,7 @@ namespace _70126_SyntaxSyndicate_Project2
             };
         }
 
-        //SAVING FILE
+       //SAVING FILE
      public void SaveFile (string filename, string details, string message)
         {
            
@@ -116,5 +116,34 @@ namespace _70126_SyntaxSyndicate_Project2
             file.Close();
           MessageBox.Show(message);
         }
-    }
+
+
+        //UPLOAD IMAGE AND GET DIRECTORY
+        //public static string UploadPhoto()
+        //{
+        //    OpenFileDialog openFileDialog = new OpenFileDialog();
+        //    openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*";
+
+        //    if (openFileDialog.ShowDialog() == DialogResult.OK)
+        //    {
+        //        string fileName = Path.GetFileName(openFileDialog.FileName);
+        //        string destinationFolder = "CustomerPhotos";
+        //        if (!Directory.Exists(destinationFolder))
+        //        {
+        //            Directory.CreateDirectory(destinationFolder);
+        //        }
+
+        //        string destinationPath = Path.Combine(destinationFolder, fileName);
+        //        File.Copy(openFileDialog.FileName, destinationPath, true);                return destinationPath;
+        //    }
+        //    else
+        //    {
+        //        return null;
+        //    }
+        //}
+
+
+        }
+
+
 }

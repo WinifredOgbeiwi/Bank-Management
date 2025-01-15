@@ -42,7 +42,7 @@ namespace _70126_SyntaxSyndicate_Project2
         }
         public override string DetailSaved()
         {
-            return $"{AccountNumber}{ID}&{Name}&{LastName}&{PhoneNumber}&{Email}&{Address}&{Plan}&{Balance}&{Savings}";
+            return $"{AccountNumber}{ID}&{Name}&{LastName}&{PhoneNumber}&{Email}&{Address}&{Plan}&{Balance}&{Savings}&{Photo}";
         }
 
         }

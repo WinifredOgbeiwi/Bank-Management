@@ -48,6 +48,8 @@ namespace _70126_SyntaxSyndicate_Project2
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 pictureBox.Image = Image.FromFile(openFileDialog1.FileName);
+                pathname.Text = openFileDialog1.FileName;
+
             }
         }
 
@@ -71,7 +73,7 @@ namespace _70126_SyntaxSyndicate_Project2
             customer.Savings = 0;
             customer.AccountNumber = textBoxAcctNum.Text;
             customer.ID = textBoxCustID.Text;
-           
+           customer.Photo = pathname.Text;
             Utils utils = new Utils();
             utils.SaveFile("CustomerFile.txt", customer.DetailSaved(), "Customer details saved");
 

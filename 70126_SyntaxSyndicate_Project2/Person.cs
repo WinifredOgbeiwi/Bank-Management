@@ -11,7 +11,7 @@ namespace _70126_SyntaxSyndicate_Project2
     internal class Person:Utils
     {
 
-        private string name, lastName, photo, address, email, phoneNumber, id, detailSaved;
+        private string name, lastName, photo, address, email, phoneNumber, id;
 
         public string Name
         {
@@ -44,7 +44,7 @@ namespace _70126_SyntaxSyndicate_Project2
         public string PhoneNumber
         {
             get { return phoneNumber; }
-                set { phoneNumber = value; }
+            set { phoneNumber = value; }
         }
 
         public virtual string ID

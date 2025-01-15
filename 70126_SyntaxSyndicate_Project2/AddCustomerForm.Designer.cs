@@ -53,6 +53,8 @@
             this.buttonSave = new System.Windows.Forms.Button();
             this.buttonExit = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pathname = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -246,7 +248,7 @@
             // 
             this.pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox.Image = global::_70126_SyntaxSyndicate_Project2.Properties.Resources.imagePlaceholder;
-            this.pictureBox.Location = new System.Drawing.Point(910, 85);
+            this.pictureBox.Location = new System.Drawing.Point(910, 103);
             this.pictureBox.Name = "pictureBox";
             this.pictureBox.Size = new System.Drawing.Size(319, 263);
             this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -295,11 +297,35 @@
             this.label1.Size = new System.Drawing.Size(0, 20);
             this.label1.TabIndex = 24;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(0, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(51, 20);
+            this.label2.TabIndex = 25;
+            this.label2.Text = "label2";
+            // 
+            // pathname
+            // 
+            this.pathname.AutoSize = true;
+            this.pathname.BackColor = System.Drawing.Color.White;
+            this.pathname.Font = new System.Drawing.Font("Microsoft YaHei Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pathname.ForeColor = System.Drawing.SystemColors.Control;
+            this.pathname.Location = new System.Drawing.Point(974, 656);
+            this.pathname.Name = "pathname";
+            this.pathname.Size = new System.Drawing.Size(55, 21);
+            this.pathname.TabIndex = 26;
+            this.pathname.Text = "label3";
+            this.pathname.Visible = false;
+            // 
             // AddCustomerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1324, 877);
+            this.Controls.Add(this.pathname);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.buttonSave);
@@ -360,5 +386,7 @@
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.Button buttonExit;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label pathname;
     }
 }
