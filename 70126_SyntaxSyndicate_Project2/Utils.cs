@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using System.Xml.Linq;
 using System.Drawing;
+using System.IO;
 
 namespace _70126_SyntaxSyndicate_Project2
 {
@@ -104,5 +105,16 @@ namespace _70126_SyntaxSyndicate_Project2
             };
         }
 
+        //SAVING FILE
+     public void SaveFile (string filename, string details, string message)
+        {
+           
+            FileStream file = new FileStream(filename, FileMode.Append, FileAccess.Write);
+            StreamWriter streamWriter = new StreamWriter(file);
+            streamWriter.WriteLine(details);
+            streamWriter.Close();
+            file.Close();
+          MessageBox.Show(message);
+        }
     }
 }

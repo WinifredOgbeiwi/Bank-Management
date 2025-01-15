@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,39 +18,9 @@ namespace _70126_SyntaxSyndicate_Project2
         {
             InitializeComponent();
         }
-
-        private void buttonPicture_Click(object sender, EventArgs e)
-        {
-            openFileDialog1.Filter = "Image Files|*.png;*.jpg;*.jpeg";
-            openFileDialog1.Title = "Select Profile Image";
-            if(openFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                pictureBox.Image = Image.FromFile(openFileDialog1.FileName);
-            }
-        }
-
-        private void buttonExit_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void buttonSave_Click(object sender, EventArgs e)
-        {
-        Customer customer = new Customer();
-            customer.Name = textBoxName.Text;
-            customer.Email = textBoxEmail.Text;
-            customer.LastName = textBoxLastName.Text;
-            customer.Address = textBoxAddress.Text;
-            customer.PhoneNumber = textBoxContact.Text;
-            customer.Balance = Convert.ToInt16(textBoxBalance.Text);
-            customer.Plan = comboBoxPlan.SelectedItem.ToString();
-            customer.Savings = 0;
-
-            
-        }
-
         private void AddCustomerForm_Load(object sender, EventArgs e)
         {
+            //Adding Placeholder
             Utils utils = new Utils();
             utils.SetPlaceholder(textBoxName, "Name");
             utils.SetPlaceholder(textBoxLastName, "Last Name");
@@ -69,5 +40,43 @@ namespace _70126_SyntaxSyndicate_Project2
             //adding plans to input
             comboBoxPlan.DataSource = Utils.Plans();
         }
+
+        private void buttonPicture_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.Filter = "Image Files|*.png;*.jpg;*.jpeg";
+            openFileDialog1.Title = "Select Profile Image";
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                pictureBox.Image = Image.FromFile(openFileDialog1.FileName);
+            }
+        }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
+
+           
+            Customer customer = new Customer();
+            customer.Name = textBoxName.Text;
+            customer.Email = textBoxEmail.Text;
+            customer.LastName = textBoxLastName.Text;
+            customer.Address = textBoxAddress.Text;
+            customer.PhoneNumber = textBoxContact.Text;
+            customer.Balance = Convert.ToInt32(textBoxBalance.Text);
+            customer.Plan = comboBoxPlan.SelectedItem.ToString();
+            customer.Savings = 0;
+            customer.AccountNumber = textBoxAcctNum.Text;
+            customer.ID = textBoxCustID.Text;
+           
+            Utils utils = new Utils();
+            utils.SaveFile("CustomerFile.txt", customer.DetailSaved(), "Customer details saved");
+
+        }
+
+
     }
 }

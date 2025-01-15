@@ -52,10 +52,9 @@ namespace _70126_SyntaxSyndicate_Project2
             get { return id; }
             set { id = value; }
         }
-        public virtual string DetailSaved
+        public virtual string DetailSaved()
         {
-            get { return detailSaved; }
-            set { detailSaved = value; }
+            return null;
 
 
         }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,7 +25,7 @@ namespace _70126_SyntaxSyndicate_Project2
         public int Savings
         {
             get { return savings; }
-            set { balance = Utils.ValidateEdge(0); }
+            set { savings = Utils.ValidateEdge(0); }
         }
         public string AccountNumber
         {
@@ -39,8 +40,10 @@ namespace _70126_SyntaxSyndicate_Project2
                 base.ID = $"{Utils.GenerateUniqueLetter(letter)}-{Utils.GenerateUniqueID()}";
             }
         }
-        public override string DetailSaved { get => base.DetailSaved; set => base.DetailSaved = value; }
+        public override string DetailSaved()
         {
+            return $"{AccountNumber}{ID}&{Name}&{LastName}&{PhoneNumber}&{Email}&{Address}&{Plan}&{Balance}&{Savings}";
+        }
 
         }
 }
