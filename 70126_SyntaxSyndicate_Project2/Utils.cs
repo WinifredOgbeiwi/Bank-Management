@@ -35,12 +35,10 @@ namespace _70126_SyntaxSyndicate_Project2
 
         //ID  - (1) random letters (2) random numbers
         private static Random random = new Random();
-
         public static string GenerateUniqueID()
         {
             return random.Next(1000, 9999).ToString();
         }
-
         public static string GenerateUniqueLetter(char[] letters)
         {
             int index = random.Next(letters.Length);
@@ -86,9 +84,6 @@ namespace _70126_SyntaxSyndicate_Project2
             };
         }
 
-
-
-
         public void SetComboBoxPlaceholder(ComboBox comboBox)
         {
             comboBox.Items.Insert(0, "Select Plan");
@@ -118,30 +113,7 @@ namespace _70126_SyntaxSyndicate_Project2
         }
 
 
-        //UPLOAD IMAGE AND GET DIRECTORY
-        //public static string UploadPhoto()
-        //{
-        //    OpenFileDialog openFileDialog = new OpenFileDialog();
-        //    openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*";
-
-        //    if (openFileDialog.ShowDialog() == DialogResult.OK)
-        //    {
-        //        string fileName = Path.GetFileName(openFileDialog.FileName);
-        //        string destinationFolder = "CustomerPhotos";
-        //        if (!Directory.Exists(destinationFolder))
-        //        {
-        //            Directory.CreateDirectory(destinationFolder);
-        //        }
-
-        //        string destinationPath = Path.Combine(destinationFolder, fileName);
-        //        File.Copy(openFileDialog.FileName, destinationPath, true);                return destinationPath;
-        //    }
-        //    else
-        //    {
-        //        return null;
-        //    }
-        //}
-
+      
 
         }
 

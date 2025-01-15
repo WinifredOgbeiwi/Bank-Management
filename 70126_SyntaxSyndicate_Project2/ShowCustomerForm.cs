@@ -19,89 +19,109 @@ namespace _70126_SyntaxSyndicate_Project2
         {
             InitializeComponent();
         }
-
         private List<Customer> customers = new List<Customer>();
         private int displayCustomerIndex = 0;
 
         private void ShowCustomer_Load(object sender, EventArgs e)
         {
-
-        FileStream fileStream = new FileStream("CustomerFile.txt", FileMode.Open, FileAccess.Read);
-            StreamReader fileReader = new StreamReader(fileStream);
-            while (!fileReader.EndOfStream)
+            try
             {
-                string customerDetails = fileReader.ReadLine();
-                string[] section = customerDetails.Split('&');
-                if (section.Length == 11)
+                FileStream fileStream = new FileStream("CustomerFile.txt", FileMode.Open, FileAccess.Read);
+                StreamReader fileReader = new StreamReader(fileStream);
+                while (!fileReader.EndOfStream)
                 {
-                    customers.Add(new Customer
-                    {
-                        Name = section[0].Trim(),
-                        LastName = section[1].Trim(),
-                        PhoneNumber = section[2].Trim(),
-                        Email = section[3].Trim(),
-                        Address = section[4].Trim(),
-                        Plan = section[5].Trim(),
-                        Balance = 3445,
-                        Savings = Convert.ToDecimal(section[7]),
-                        ID = section[8].Trim(),
-                        AccountNumber = section[9].Trim(),
-                        Photo = section[10].Trim()
+                    string customerDetails = fileReader.ReadLine();
+                    string[] section = customerDetails.Split('&');
 
+                    if (section.Length == 11) // Ensure there are 11 parts for a valid customer
+                    {
+                        customers.Add(new Customer
+                        {
+                            Name = section[0].Trim(),
+                            LastName = section[1].Trim(),
+                            PhoneNumber = section[2].Trim(),
+                            Email = section[3].Trim(),
+                            Address = section[4].Trim(),
+                            Plan = section[5].Trim(),
+                            Balance = Convert.ToDecimal(section[6].Trim()), // Assuming the balance is at section[6]
+                            Savings = Convert.ToDecimal(section[7].Trim()), // Assuming savings is at section[7]
+                            ID = section[8].Trim(),
+                            AccountNumber = section[9].Trim(),
+                            Photo = section[10].Trim()
+                        });
                     }
-     );
+                    else
+                    {
+                        MessageBox.Show("Customer data format is incorrect, skipping this entry.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+
+                fileReader.Close();
+                fileStream.Close();
+
+                // Display the first customer if available
+                if (customers.Count > 0)
+                {
+                    CustomerDetails(customers[displayCustomerIndex]);
                 }
                 else
                 {
-                    MessageBox.Show("Customer data format is incorrect, skip this entry.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("No customers found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.Close();
                 }
             }
-            fileReader.Close();
-            fileStream.Close();
-            
-            if (customers.Count > 0 && displayCustomerIndex >= 0 && displayCustomerIndex < customers.Count)
+            catch (Exception ex)
             {
-                Customer customer = customers[displayCustomerIndex];
-              customerName.Text = customer.Name;
-                customerLastName.Text = customer.LastName;
-                customerEmail.Text = customer.Email;
-                customerContact.Text = customer.PhoneNumber;
-                customerAddress.Text = customer.Address;
-                customerBalance.Text = customer.Balance.ToString();
-                customerPlan.Text = customer.Plan.ToString();
-                customerSavings.Text = customer.Savings.ToString();
-                customerAcctNum.Text = customer.AccountNumber;
-                customerID.Text = customer.ID;
-                pictureBox1.ImageLocation = customer.Photo;
+                MessageBox.Show($"An error occurred while loading customer data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-           
+        }
+
+        private void CustomerDetails(Customer customer)
+        {
+            customerName.Text = customer.Name;
+            customerLastName.Text = customer.LastName;
+            customerEmail.Text = customer.Email;
+            customerContact.Text = customer.PhoneNumber;
+            customerAddress.Text = customer.Address;
+            customerBalance.Text = customer.Balance.ToString("F2"); 
+            customerPlan.Text = customer.Plan;
+            customerSavings.Text = customer.Savings.ToString("F2");
+            customerAcctNum.Text = customer.AccountNumber;
+            customerID.Text = customer.ID;
+            pictureBox1.ImageLocation = customer.Photo;
+        }
+
+        private void buttonPrev_Click(object sender, EventArgs e)
+        {
+            if (customers.Count > 0 && displayCustomerIndex > 0)
+            {
+                displayCustomerIndex--;
+                CustomerDetails(customers[displayCustomerIndex]);
+            }
             else
             {
-                MessageBox.Show("Failed to Load", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                this.Close();
+                MessageBox.Show("This is the first customer.", "Navigation Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         }
+
+
+        private void buttonNext_Click_1(object sender, EventArgs e)
+        {
+            if (customers.Count > 0 && displayCustomerIndex < customers.Count - 1)
+            {
+                displayCustomerIndex++;
+                CustomerDetails(customers[displayCustomerIndex]);
+            }
+            else
+            {
+                MessageBox.Show("This is the last customer.", "Navigation Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+
         private void buttonExit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
- }
+    }
 }

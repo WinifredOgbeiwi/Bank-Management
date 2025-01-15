@@ -55,8 +55,8 @@
             this.labelName = new System.Windows.Forms.Label();
             this.buttonExit = new System.Windows.Forms.Button();
             this.labelPagination = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.buttonPrev = new System.Windows.Forms.Button();
+            this.buttonNext = new System.Windows.Forms.Button();
             this.groupBoxShowCustomer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -353,33 +353,35 @@
             this.labelPagination.TabIndex = 40;
             this.labelPagination.Text = "null";
             // 
-            // label1
+            // buttonPrev
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(42, 51);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(31, 32);
-            this.label1.TabIndex = 41;
-            this.label1.Text = "<";
+            this.buttonPrev.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPrev.Location = new System.Drawing.Point(48, 36);
+            this.buttonPrev.Name = "buttonPrev";
+            this.buttonPrev.Size = new System.Drawing.Size(55, 44);
+            this.buttonPrev.TabIndex = 44;
+            this.buttonPrev.Text = "<";
+            this.buttonPrev.UseVisualStyleBackColor = true;
+            this.buttonPrev.Click += new System.EventHandler(this.buttonPrev_Click);
             // 
-            // label2
+            // buttonNext
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(1182, 55);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(31, 32);
-            this.label2.TabIndex = 42;
-            this.label2.Text = ">";
+            this.buttonNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonNext.Location = new System.Drawing.Point(1158, 36);
+            this.buttonNext.Name = "buttonNext";
+            this.buttonNext.Size = new System.Drawing.Size(55, 44);
+            this.buttonNext.TabIndex = 45;
+            this.buttonNext.Text = ">";
+            this.buttonNext.UseVisualStyleBackColor = true;
+            this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click_1);
             // 
             // ShowCustomerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1274, 706);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.buttonNext);
+            this.Controls.Add(this.buttonPrev);
             this.Controls.Add(this.labelPagination);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.groupBoxShowCustomer);
@@ -424,7 +426,7 @@
         private System.Windows.Forms.Button buttonCustomerEdit;
         private System.Windows.Forms.Button buttonExit;
         private System.Windows.Forms.Label labelPagination;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button buttonPrev;
+        private System.Windows.Forms.Button buttonNext;
     }
 }
