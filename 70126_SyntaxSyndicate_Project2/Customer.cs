@@ -17,12 +17,12 @@ namespace _70126_SyntaxSyndicate_Project2
             set { plan = value; }
         }
 
-        public int Balance
+        public decimal Balance
         {
             get { return balance; }
-            set { balance = Utils.ValidateEdge(value); }
+            set { balance = Utils.ValidateEdge((int)value); }
         }
-        public int Savings
+        public decimal Savings
         {
             get { return savings; }
             set { savings = Utils.ValidateEdge(0); }
@@ -42,7 +42,7 @@ namespace _70126_SyntaxSyndicate_Project2
         }
         public override string DetailSaved()
         {
-            return $"{AccountNumber}{ID}&{Name}&{LastName}&{PhoneNumber}&{Email}&{Address}&{Plan}&{Balance}&{Savings}&{Photo}";
+            return $"{Name}&{LastName}&{PhoneNumber}&{Email}&{Address}&{Plan}&{Balance}&{Savings}&{Photo}&{AccountNumber}&{ID}";
         }
 
         }
