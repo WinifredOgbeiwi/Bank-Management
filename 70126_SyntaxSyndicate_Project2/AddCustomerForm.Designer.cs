@@ -50,6 +50,9 @@
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.buttonPicture = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.buttonSave = new System.Windows.Forms.Button();
+            this.buttonExit = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -209,20 +212,26 @@
             // 
             // textBoxAcctNum
             // 
+            this.textBoxAcctNum.BackColor = System.Drawing.Color.Gainsboro;
             this.textBoxAcctNum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxAcctNum.Cursor = System.Windows.Forms.Cursors.No;
             this.textBoxAcctNum.Location = new System.Drawing.Point(301, 490);
             this.textBoxAcctNum.Multiline = true;
             this.textBoxAcctNum.Name = "textBoxAcctNum";
+            this.textBoxAcctNum.ReadOnly = true;
             this.textBoxAcctNum.Size = new System.Drawing.Size(339, 34);
             this.textBoxAcctNum.TabIndex = 17;
             // 
             // textBoxCustID
             // 
+            this.textBoxCustID.BackColor = System.Drawing.Color.Gainsboro;
             this.textBoxCustID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxCustID.Cursor = System.Windows.Forms.Cursors.No;
             this.textBoxCustID.Location = new System.Drawing.Point(910, 490);
             this.textBoxCustID.Multiline = true;
             this.textBoxCustID.Name = "textBoxCustID";
-            this.textBoxCustID.Size = new System.Drawing.Size(339, 34);
+            this.textBoxCustID.ReadOnly = true;
+            this.textBoxCustID.Size = new System.Drawing.Size(319, 34);
             this.textBoxCustID.TabIndex = 18;
             // 
             // comboBoxPlan
@@ -236,15 +245,17 @@
             // pictureBox
             // 
             this.pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox.Location = new System.Drawing.Point(919, 85);
+            this.pictureBox.Image = global::_70126_SyntaxSyndicate_Project2.Properties.Resources.imagePlaceholder;
+            this.pictureBox.Location = new System.Drawing.Point(910, 85);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(330, 228);
+            this.pictureBox.Size = new System.Drawing.Size(319, 263);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox.TabIndex = 20;
             this.pictureBox.TabStop = false;
             // 
             // buttonPicture
             // 
-            this.buttonPicture.Location = new System.Drawing.Point(1003, 336);
+            this.buttonPicture.Location = new System.Drawing.Point(978, 372);
             this.buttonPicture.Name = "buttonPicture";
             this.buttonPicture.Size = new System.Drawing.Size(196, 49);
             this.buttonPicture.TabIndex = 21;
@@ -256,11 +267,42 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // buttonSave
+            // 
+            this.buttonSave.Location = new System.Drawing.Point(52, 567);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(420, 49);
+            this.buttonSave.TabIndex = 22;
+            this.buttonSave.Text = "Save";
+            this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
+            // 
+            // buttonExit
+            // 
+            this.buttonExit.Location = new System.Drawing.Point(809, 567);
+            this.buttonExit.Name = "buttonExit";
+            this.buttonExit.Size = new System.Drawing.Size(420, 49);
+            this.buttonExit.TabIndex = 23;
+            this.buttonExit.Text = "Exit";
+            this.buttonExit.UseVisualStyleBackColor = true;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(309, 498);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 20);
+            this.label1.TabIndex = 24;
+            // 
             // AddCustomerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1324, 877);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.buttonExit);
+            this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.buttonPicture);
             this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.comboBoxPlan);
@@ -284,6 +326,7 @@
             this.Controls.Add(this.headingLabel);
             this.Name = "AddCustomerForm";
             this.Text = "AddCustomerForm";
+            this.Load += new System.EventHandler(this.AddCustomerForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -314,5 +357,8 @@
         private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.Button buttonPicture;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Button buttonSave;
+        private System.Windows.Forms.Button buttonExit;
+        private System.Windows.Forms.Label label1;
     }
 }

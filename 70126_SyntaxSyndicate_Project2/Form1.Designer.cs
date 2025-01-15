@@ -53,7 +53,7 @@
             // 
             // customerGroupBox
             // 
-            this.customerGroupBox.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.customerGroupBox.BackColor = System.Drawing.Color.White;
             this.customerGroupBox.Controls.Add(this.showCustomerbutton);
             this.customerGroupBox.Controls.Add(this.addCustomerbutton);
             this.customerGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -104,7 +104,7 @@
             this.staffGroupBox.Controls.Add(this.showStaffbutton);
             this.staffGroupBox.Controls.Add(this.addStaffbutton);
             this.staffGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.staffGroupBox.Location = new System.Drawing.Point(13, 325);
+            this.staffGroupBox.Location = new System.Drawing.Point(13, 358);
             this.staffGroupBox.Name = "staffGroupBox";
             this.staffGroupBox.Size = new System.Drawing.Size(925, 199);
             this.staffGroupBox.TabIndex = 3;
@@ -151,7 +151,7 @@
             this.exitButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
             this.exitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exitButton.Location = new System.Drawing.Point(12, 549);
+            this.exitButton.Location = new System.Drawing.Point(12, 603);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(926, 65);
             this.exitButton.TabIndex = 2;
