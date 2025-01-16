@@ -113,6 +113,7 @@
             this.buttonControlBal.TabIndex = 38;
             this.buttonControlBal.Text = "Control Balance";
             this.buttonControlBal.UseVisualStyleBackColor = true;
+            this.buttonControlBal.Click += new System.EventHandler(this.buttonControlBal_Click);
             // 
             // buttonCustomerEdit
             // 
@@ -210,6 +211,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(820, 58);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(317, 264);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 28;
             this.pictureBox1.TabStop = false;
             // 

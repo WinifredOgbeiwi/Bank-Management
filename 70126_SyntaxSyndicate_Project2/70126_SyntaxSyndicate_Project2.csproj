@@ -59,6 +59,12 @@
       <DependentUpon>AddStaffForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Customer.cs" />
+    <Compile Include="CustomerAccountControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerAccountControl.Designer.cs">
+      <DependentUpon>CustomerAccountControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +92,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddStaffForm.resx">
       <DependentUpon>AddStaffForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerAccountControl.resx">
+      <DependentUpon>CustomerAccountControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

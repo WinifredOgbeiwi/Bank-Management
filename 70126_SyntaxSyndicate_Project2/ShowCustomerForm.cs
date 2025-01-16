@@ -123,5 +123,19 @@ namespace _70126_SyntaxSyndicate_Project2
         {
             this.Close();
         }
+
+        private void buttonControlBal_Click(object sender, EventArgs e)
+        {
+            Customer selectedCustomer = customers[displayCustomerIndex];
+            CustomerAccountControl customerAccountControl = new CustomerAccountControl(
+         selectedCustomer.AccountNumber,
+         selectedCustomer.ID,
+         selectedCustomer.Balance,
+         selectedCustomer.Savings
+   
+     );
+            customerAccountControl.Show();
+
+        }
     }
 }
