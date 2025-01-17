@@ -28,169 +28,68 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.headinglabel = new System.Windows.Forms.Label();
-            this.customerGroupBox = new System.Windows.Forms.GroupBox();
-            this.showCustomerbutton = new System.Windows.Forms.Button();
-            this.addCustomerbutton = new System.Windows.Forms.Button();
-            this.staffGroupBox = new System.Windows.Forms.GroupBox();
-            this.showStaffbutton = new System.Windows.Forms.Button();
-            this.addStaffbutton = new System.Windows.Forms.Button();
-            this.exitButton = new System.Windows.Forms.Button();
-            this.customerGroupBox.SuspendLayout();
-            this.staffGroupBox.SuspendLayout();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // headinglabel
+            // button2
             // 
-            this.headinglabel.AutoSize = true;
-            this.headinglabel.Font = new System.Drawing.Font("Mistral", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.headinglabel.ForeColor = System.Drawing.Color.Black;
-            this.headinglabel.Location = new System.Drawing.Point(294, 9);
-            this.headinglabel.Name = "headinglabel";
-            this.headinglabel.Size = new System.Drawing.Size(415, 86);
-            this.headinglabel.TabIndex = 0;
-            this.headinglabel.Text = "Syndicate Bank";
+            this.button2.BackColor = System.Drawing.Color.Indigo;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.DarkOrchid;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkOrchid;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Violet;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(39, 561);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(406, 77);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Exit";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // customerGroupBox
+            // button1
             // 
-            this.customerGroupBox.BackColor = System.Drawing.Color.White;
-            this.customerGroupBox.Controls.Add(this.showCustomerbutton);
-            this.customerGroupBox.Controls.Add(this.addCustomerbutton);
-            this.customerGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customerGroupBox.Location = new System.Drawing.Point(13, 107);
-            this.customerGroupBox.Name = "customerGroupBox";
-            this.customerGroupBox.Size = new System.Drawing.Size(925, 191);
-            this.customerGroupBox.TabIndex = 2;
-            this.customerGroupBox.TabStop = false;
-            this.customerGroupBox.Text = "Customer Control";
-            // 
-            // showCustomerbutton
-            // 
-            this.showCustomerbutton.BackColor = System.Drawing.Color.White;
-            this.showCustomerbutton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.showCustomerbutton.FlatAppearance.BorderSize = 2;
-            this.showCustomerbutton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGray;
-            this.showCustomerbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
-            this.showCustomerbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.showCustomerbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.showCustomerbutton.Location = new System.Drawing.Point(290, 104);
-            this.showCustomerbutton.Name = "showCustomerbutton";
-            this.showCustomerbutton.Size = new System.Drawing.Size(336, 65);
-            this.showCustomerbutton.TabIndex = 1;
-            this.showCustomerbutton.Text = "Show Customer";
-            this.showCustomerbutton.UseVisualStyleBackColor = false;
-            this.showCustomerbutton.Click += new System.EventHandler(this.showCustomerbutton_Click);
-            // 
-            // addCustomerbutton
-            // 
-            this.addCustomerbutton.BackColor = System.Drawing.Color.White;
-            this.addCustomerbutton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.addCustomerbutton.FlatAppearance.BorderSize = 2;
-            this.addCustomerbutton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGray;
-            this.addCustomerbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
-            this.addCustomerbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addCustomerbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addCustomerbutton.Location = new System.Drawing.Point(291, 32);
-            this.addCustomerbutton.Name = "addCustomerbutton";
-            this.addCustomerbutton.Size = new System.Drawing.Size(336, 65);
-            this.addCustomerbutton.TabIndex = 0;
-            this.addCustomerbutton.Text = "Add Customer";
-            this.addCustomerbutton.UseVisualStyleBackColor = false;
-            this.addCustomerbutton.Click += new System.EventHandler(this.addCustomerbutton_Click);
-            // 
-            // staffGroupBox
-            // 
-            this.staffGroupBox.BackColor = System.Drawing.Color.White;
-            this.staffGroupBox.Controls.Add(this.showStaffbutton);
-            this.staffGroupBox.Controls.Add(this.addStaffbutton);
-            this.staffGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.staffGroupBox.Location = new System.Drawing.Point(13, 358);
-            this.staffGroupBox.Name = "staffGroupBox";
-            this.staffGroupBox.Size = new System.Drawing.Size(925, 199);
-            this.staffGroupBox.TabIndex = 3;
-            this.staffGroupBox.TabStop = false;
-            this.staffGroupBox.Text = "Staff Control";
-            // 
-            // showStaffbutton
-            // 
-            this.showStaffbutton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.showStaffbutton.FlatAppearance.BorderSize = 2;
-            this.showStaffbutton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGray;
-            this.showStaffbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
-            this.showStaffbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.showStaffbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.showStaffbutton.Location = new System.Drawing.Point(319, 118);
-            this.showStaffbutton.Name = "showStaffbutton";
-            this.showStaffbutton.Size = new System.Drawing.Size(336, 65);
-            this.showStaffbutton.TabIndex = 1;
-            this.showStaffbutton.Text = "Show Staff";
-            this.showStaffbutton.UseVisualStyleBackColor = true;
-            this.showStaffbutton.Click += new System.EventHandler(this.showStaffbutton_Click);
-            // 
-            // addStaffbutton
-            // 
-            this.addStaffbutton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.addStaffbutton.FlatAppearance.BorderSize = 2;
-            this.addStaffbutton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGray;
-            this.addStaffbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
-            this.addStaffbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addStaffbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addStaffbutton.Location = new System.Drawing.Point(319, 39);
-            this.addStaffbutton.Name = "addStaffbutton";
-            this.addStaffbutton.Size = new System.Drawing.Size(336, 65);
-            this.addStaffbutton.TabIndex = 0;
-            this.addStaffbutton.Text = "Add Staff";
-            this.addStaffbutton.UseVisualStyleBackColor = true;
-            this.addStaffbutton.Click += new System.EventHandler(this.addStaffbutton_Click);
-            // 
-            // exitButton
-            // 
-            this.exitButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.exitButton.FlatAppearance.BorderSize = 2;
-            this.exitButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGray;
-            this.exitButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
-            this.exitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exitButton.Location = new System.Drawing.Point(12, 603);
-            this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(926, 65);
-            this.exitButton.TabIndex = 2;
-            this.exitButton.Text = "Exit";
-            this.exitButton.UseVisualStyleBackColor = true;
-            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.DarkOrchid;
+            this.button1.FlatAppearance.BorderSize = 2;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkOrchid;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Violet;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(39, 443);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(406, 77);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Login";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(950, 877);
-            this.Controls.Add(this.exitButton);
-            this.Controls.Add(this.staffGroupBox);
-            this.Controls.Add(this.customerGroupBox);
-            this.Controls.Add(this.headinglabel);
+            this.BackgroundImage = global::_70126_SyntaxSyndicate_Project2.Properties.Resources.WhatsApp_Image_2025_01_17_at_19_41_03_93fc4312;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(496, 886);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.HelpButton = true;
             this.MaximizeBox = false;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Syndicate Bank";
-            this.customerGroupBox.ResumeLayout(false);
-            this.staffGroupBox.ResumeLayout(false);
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label headinglabel;
-        private System.Windows.Forms.GroupBox customerGroupBox;
-        private System.Windows.Forms.Button addCustomerbutton;
-        private System.Windows.Forms.Button showCustomerbutton;
-        private System.Windows.Forms.GroupBox staffGroupBox;
-        private System.Windows.Forms.Button showStaffbutton;
-        private System.Windows.Forms.Button addStaffbutton;
-        private System.Windows.Forms.Button exitButton;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
     }
 }
 

@@ -69,5 +69,15 @@ namespace _70126_SyntaxSyndicate_Project2.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WhatsApp_Image_2025_01_17_at_19_41_03_93fc4312 {
+            get {
+                object obj = ResourceManager.GetObject("WhatsApp Image 2025-01-17 at 19.41.03_93fc4312", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

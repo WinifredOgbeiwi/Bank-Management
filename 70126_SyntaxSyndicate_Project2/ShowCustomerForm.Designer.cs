@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.headingLabel = new System.Windows.Forms.Label();
             this.groupBoxShowCustomer = new System.Windows.Forms.GroupBox();
             this.buttonControlBal = new System.Windows.Forms.Button();
             this.buttonCustomerEdit = new System.Windows.Forms.Button();
@@ -54,25 +53,17 @@
             this.labelLastName = new System.Windows.Forms.Label();
             this.labelName = new System.Windows.Forms.Label();
             this.buttonExit = new System.Windows.Forms.Button();
-            this.labelPagination = new System.Windows.Forms.Label();
             this.buttonPrev = new System.Windows.Forms.Button();
             this.buttonNext = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBoxShowCustomer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // headingLabel
-            // 
-            this.headingLabel.AutoSize = true;
-            this.headingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.headingLabel.Location = new System.Drawing.Point(424, 15);
-            this.headingLabel.Name = "headingLabel";
-            this.headingLabel.Size = new System.Drawing.Size(227, 32);
-            this.headingLabel.TabIndex = 1;
-            this.headingLabel.Text = "Show Customer";
-            // 
             // groupBoxShowCustomer
             // 
+            this.groupBoxShowCustomer.Controls.Add(this.buttonNext);
+            this.groupBoxShowCustomer.Controls.Add(this.buttonPrev);
             this.groupBoxShowCustomer.Controls.Add(this.buttonControlBal);
             this.groupBoxShowCustomer.Controls.Add(this.buttonCustomerEdit);
             this.groupBoxShowCustomer.Controls.Add(this.customerID);
@@ -97,9 +88,9 @@
             this.groupBoxShowCustomer.Controls.Add(this.labelLastName);
             this.groupBoxShowCustomer.Controls.Add(this.labelName);
             this.groupBoxShowCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxShowCustomer.Location = new System.Drawing.Point(48, 86);
+            this.groupBoxShowCustomer.Location = new System.Drawing.Point(25, 102);
             this.groupBoxShowCustomer.Name = "groupBoxShowCustomer";
-            this.groupBoxShowCustomer.Size = new System.Drawing.Size(1165, 513);
+            this.groupBoxShowCustomer.Size = new System.Drawing.Size(1094, 885);
             this.groupBoxShowCustomer.TabIndex = 2;
             this.groupBoxShowCustomer.TabStop = false;
             this.groupBoxShowCustomer.Text = "Customer Information";
@@ -107,7 +98,7 @@
             // buttonControlBal
             // 
             this.buttonControlBal.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonControlBal.Location = new System.Drawing.Point(820, 428);
+            this.buttonControlBal.Location = new System.Drawing.Point(727, 428);
             this.buttonControlBal.Name = "buttonControlBal";
             this.buttonControlBal.Size = new System.Drawing.Size(317, 58);
             this.buttonControlBal.TabIndex = 38;
@@ -118,7 +109,7 @@
             // buttonCustomerEdit
             // 
             this.buttonCustomerEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCustomerEdit.Location = new System.Drawing.Point(820, 341);
+            this.buttonCustomerEdit.Location = new System.Drawing.Point(727, 341);
             this.buttonCustomerEdit.Name = "buttonCustomerEdit";
             this.buttonCustomerEdit.Size = new System.Drawing.Size(317, 58);
             this.buttonCustomerEdit.TabIndex = 37;
@@ -139,7 +130,7 @@
             // 
             this.customerSavings.AutoSize = true;
             this.customerSavings.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customerSavings.Location = new System.Drawing.Point(629, 174);
+            this.customerSavings.Location = new System.Drawing.Point(629, 173);
             this.customerSavings.Name = "customerSavings";
             this.customerSavings.Size = new System.Drawing.Size(46, 25);
             this.customerSavings.TabIndex = 35;
@@ -149,7 +140,7 @@
             // 
             this.labelSavings.AutoSize = true;
             this.labelSavings.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSavings.Location = new System.Drawing.Point(491, 174);
+            this.labelSavings.Location = new System.Drawing.Point(491, 173);
             this.labelSavings.Name = "labelSavings";
             this.labelSavings.Size = new System.Drawing.Size(89, 25);
             this.labelSavings.TabIndex = 34;
@@ -159,7 +150,7 @@
             // 
             this.customerPlan.AutoSize = true;
             this.customerPlan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customerPlan.Location = new System.Drawing.Point(629, 58);
+            this.customerPlan.Location = new System.Drawing.Point(629, 57);
             this.customerPlan.Name = "customerPlan";
             this.customerPlan.Size = new System.Drawing.Size(46, 25);
             this.customerPlan.TabIndex = 33;
@@ -169,7 +160,7 @@
             // 
             this.labelPlan.AutoSize = true;
             this.labelPlan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPlan.Location = new System.Drawing.Point(491, 58);
+            this.labelPlan.Location = new System.Drawing.Point(491, 57);
             this.labelPlan.Name = "labelPlan";
             this.labelPlan.Size = new System.Drawing.Size(57, 25);
             this.labelPlan.TabIndex = 32;
@@ -208,9 +199,9 @@
             // pictureBox1
             // 
             this.pictureBox1.ImageLocation = "";
-            this.pictureBox1.Location = new System.Drawing.Point(820, 58);
+            this.pictureBox1.Location = new System.Drawing.Point(6, 34);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(317, 264);
+            this.pictureBox1.Size = new System.Drawing.Size(308, 257);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 28;
             this.pictureBox1.TabStop = false;
@@ -219,7 +210,7 @@
             // 
             this.customerBalance.AutoSize = true;
             this.customerBalance.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customerBalance.Location = new System.Drawing.Point(629, 119);
+            this.customerBalance.Location = new System.Drawing.Point(629, 118);
             this.customerBalance.Name = "customerBalance";
             this.customerBalance.Size = new System.Drawing.Size(46, 25);
             this.customerBalance.TabIndex = 27;
@@ -229,7 +220,7 @@
             // 
             this.customerAddress.AutoSize = true;
             this.customerAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customerAddress.Location = new System.Drawing.Point(240, 296);
+            this.customerAddress.Location = new System.Drawing.Point(579, 474);
             this.customerAddress.Name = "customerAddress";
             this.customerAddress.Size = new System.Drawing.Size(46, 25);
             this.customerAddress.TabIndex = 26;
@@ -239,7 +230,7 @@
             // 
             this.customerEmail.AutoSize = true;
             this.customerEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customerEmail.Location = new System.Drawing.Point(240, 238);
+            this.customerEmail.Location = new System.Drawing.Point(579, 415);
             this.customerEmail.Name = "customerEmail";
             this.customerEmail.Size = new System.Drawing.Size(46, 25);
             this.customerEmail.TabIndex = 25;
@@ -249,7 +240,7 @@
             // 
             this.customerContact.AutoSize = true;
             this.customerContact.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customerContact.Location = new System.Drawing.Point(240, 179);
+            this.customerContact.Location = new System.Drawing.Point(579, 356);
             this.customerContact.Name = "customerContact";
             this.customerContact.Size = new System.Drawing.Size(46, 25);
             this.customerContact.TabIndex = 24;
@@ -259,7 +250,7 @@
             // 
             this.customerLastName.AutoSize = true;
             this.customerLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customerLastName.Location = new System.Drawing.Point(240, 119);
+            this.customerLastName.Location = new System.Drawing.Point(579, 296);
             this.customerLastName.Name = "customerLastName";
             this.customerLastName.Size = new System.Drawing.Size(46, 25);
             this.customerLastName.TabIndex = 23;
@@ -269,7 +260,7 @@
             // 
             this.customerName.AutoSize = true;
             this.customerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customerName.Location = new System.Drawing.Point(240, 58);
+            this.customerName.Location = new System.Drawing.Point(579, 235);
             this.customerName.Name = "customerName";
             this.customerName.Size = new System.Drawing.Size(46, 25);
             this.customerName.TabIndex = 22;
@@ -279,7 +270,7 @@
             // 
             this.labelBalance.AutoSize = true;
             this.labelBalance.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBalance.Location = new System.Drawing.Point(491, 119);
+            this.labelBalance.Location = new System.Drawing.Point(491, 118);
             this.labelBalance.Name = "labelBalance";
             this.labelBalance.Size = new System.Drawing.Size(89, 25);
             this.labelBalance.TabIndex = 20;
@@ -289,7 +280,7 @@
             // 
             this.labelAddress.AutoSize = true;
             this.labelAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAddress.Location = new System.Drawing.Point(36, 296);
+            this.labelAddress.Location = new System.Drawing.Point(375, 474);
             this.labelAddress.Name = "labelAddress";
             this.labelAddress.Size = new System.Drawing.Size(91, 25);
             this.labelAddress.TabIndex = 19;
@@ -299,7 +290,7 @@
             // 
             this.labelEmail.AutoSize = true;
             this.labelEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEmail.Location = new System.Drawing.Point(36, 238);
+            this.labelEmail.Location = new System.Drawing.Point(375, 415);
             this.labelEmail.Name = "labelEmail";
             this.labelEmail.Size = new System.Drawing.Size(66, 25);
             this.labelEmail.TabIndex = 18;
@@ -309,7 +300,7 @@
             // 
             this.labelPhoneNumber.AutoSize = true;
             this.labelPhoneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPhoneNumber.Location = new System.Drawing.Point(36, 179);
+            this.labelPhoneNumber.Location = new System.Drawing.Point(375, 356);
             this.labelPhoneNumber.Name = "labelPhoneNumber";
             this.labelPhoneNumber.Size = new System.Drawing.Size(149, 25);
             this.labelPhoneNumber.TabIndex = 17;
@@ -319,7 +310,7 @@
             // 
             this.labelLastName.AutoSize = true;
             this.labelLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLastName.Location = new System.Drawing.Point(36, 119);
+            this.labelLastName.Location = new System.Drawing.Point(375, 296);
             this.labelLastName.Name = "labelLastName";
             this.labelLastName.Size = new System.Drawing.Size(112, 25);
             this.labelLastName.TabIndex = 16;
@@ -329,7 +320,7 @@
             // 
             this.labelName.AutoSize = true;
             this.labelName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelName.Location = new System.Drawing.Point(36, 58);
+            this.labelName.Location = new System.Drawing.Point(375, 235);
             this.labelName.Name = "labelName";
             this.labelName.Size = new System.Drawing.Size(70, 25);
             this.labelName.TabIndex = 15;
@@ -345,20 +336,10 @@
             this.buttonExit.UseVisualStyleBackColor = true;
             this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
-            // labelPagination
-            // 
-            this.labelPagination.AutoSize = true;
-            this.labelPagination.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPagination.Location = new System.Drawing.Point(424, 55);
-            this.labelPagination.Name = "labelPagination";
-            this.labelPagination.Size = new System.Drawing.Size(64, 32);
-            this.labelPagination.TabIndex = 40;
-            this.labelPagination.Text = "null";
-            // 
             // buttonPrev
             // 
             this.buttonPrev.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonPrev.Location = new System.Drawing.Point(48, 36);
+            this.buttonPrev.Location = new System.Drawing.Point(292, 395);
             this.buttonPrev.Name = "buttonPrev";
             this.buttonPrev.Size = new System.Drawing.Size(55, 44);
             this.buttonPrev.TabIndex = 44;
@@ -369,7 +350,7 @@
             // buttonNext
             // 
             this.buttonNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonNext.Location = new System.Drawing.Point(1158, 36);
+            this.buttonNext.Location = new System.Drawing.Point(643, 283);
             this.buttonNext.Name = "buttonNext";
             this.buttonNext.Size = new System.Drawing.Size(55, 44);
             this.buttonNext.TabIndex = 45;
@@ -377,17 +358,27 @@
             this.buttonNext.UseVisualStyleBackColor = true;
             this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click_1);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Indigo;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI Black", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(-2, -1);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(1199, 96);
+            this.button1.TabIndex = 46;
+            this.button1.Text = "Customer Details";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // ShowCustomerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1274, 706);
-            this.Controls.Add(this.buttonNext);
-            this.Controls.Add(this.buttonPrev);
-            this.Controls.Add(this.labelPagination);
+            this.ClientSize = new System.Drawing.Size(1179, 706);
             this.Controls.Add(this.buttonExit);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBoxShowCustomer);
-            this.Controls.Add(this.headingLabel);
             this.Name = "ShowCustomerForm";
             this.Text = "ShowCustomer";
             this.Load += new System.EventHandler(this.ShowCustomer_Load);
@@ -395,13 +386,10 @@
             this.groupBoxShowCustomer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label headingLabel;
         private System.Windows.Forms.GroupBox groupBoxShowCustomer;
         private System.Windows.Forms.Label customerEmail;
         private System.Windows.Forms.Label customerContact;
@@ -427,8 +415,8 @@
         private System.Windows.Forms.Button buttonControlBal;
         private System.Windows.Forms.Button buttonCustomerEdit;
         private System.Windows.Forms.Button buttonExit;
-        private System.Windows.Forms.Label labelPagination;
         private System.Windows.Forms.Button buttonPrev;
         private System.Windows.Forms.Button buttonNext;
+        private System.Windows.Forms.Button button1;
     }
 }
