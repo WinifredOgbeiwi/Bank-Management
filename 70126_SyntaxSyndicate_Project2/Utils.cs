@@ -54,16 +54,16 @@ namespace _70126_SyntaxSyndicate_Project2
         // plan list 
         public static List<string> Plans()
         {
-            List<string> plans = new List<string> { "Plan","Basic", "Premium", "VIP" };
+            List<string> plans = new List<string> { "Plan", "Basic", "Premium", "VIP" };
             return plans;
         }
 
         //placeholder
         public void SetPlaceholder(TextBox textBox, string placeholderText)
         {
-           
+
             textBox.Text = placeholderText;
-            textBox.ForeColor = Color.Gray; 
+            textBox.ForeColor = Color.Gray;
 
             textBox.Enter += (sender, e) =>
             {
@@ -79,7 +79,7 @@ namespace _70126_SyntaxSyndicate_Project2
                 if (string.IsNullOrEmpty(textBox.Text))
                 {
                     textBox.Text = placeholderText;
-                    textBox.ForeColor = Color.Gray; 
+                    textBox.ForeColor = Color.Gray;
                 }
             };
         }
@@ -100,22 +100,64 @@ namespace _70126_SyntaxSyndicate_Project2
             };
         }
 
-       //SAVING FILE
-     public void SaveFile (string filename, string details, string message)
+        //SAVING FILE
+        public void SaveFile(string filename, string details, string message)
         {
-           
+
             FileStream file = new FileStream(filename, FileMode.Append, FileAccess.Write);
             StreamWriter streamWriter = new StreamWriter(file);
             streamWriter.WriteLine(details);
             streamWriter.Close();
             file.Close();
-          MessageBox.Show(message);
+            MessageBox.Show(message);
         }
 
 
-      
+        //Generated account number
+        public static string GeneratedAccountNumber()
+        {
+            return $"5585 {Utils.GenerateUniqueID()} {Utils.GenerateUniqueID()} {Utils.GenerateUniqueID()}";
+        }
 
+        public static string GeneratedUserID(char[] userLetters)
+        {
+            return $"{Utils.GenerateUniqueLetter(userLetters)}-{Utils.GenerateUniqueID()}";
+        }
+
+        //
+        public static void UpdateCustomerBalanceInFile(string customerId, decimal newBalance)
+        {
+            string filePath = "CustomerFile.txt";
+            List<string> customerFile = new List<string>();
+
+            try
+            {
+                customerFile = File.ReadAllLines(filePath).ToList();
+
+                for (int i = 0; i < customerFile.Count; i++)
+                {
+                    string[] section = customerFile[i].Split('&');
+                    if (section[8].Trim() == customerId)
+                    {
+
+                        section[6] = newBalance.ToString("F2");
+                        customerFile[i] = string.Join("&", section);
+                        break;
+                    }
+                }
+
+
+                File.WriteAllLines(filePath, customerFile);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while updating the file: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
 
+        //RELOAD
+    
+
+    }
 }

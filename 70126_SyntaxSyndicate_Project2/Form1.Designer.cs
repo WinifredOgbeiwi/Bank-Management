@@ -30,8 +30,8 @@
         {
             this.headinglabel = new System.Windows.Forms.Label();
             this.customerGroupBox = new System.Windows.Forms.GroupBox();
-            this.addCustomerbutton = new System.Windows.Forms.Button();
             this.showCustomerbutton = new System.Windows.Forms.Button();
+            this.addCustomerbutton = new System.Windows.Forms.Button();
             this.staffGroupBox = new System.Windows.Forms.GroupBox();
             this.showStaffbutton = new System.Windows.Forms.Button();
             this.addStaffbutton = new System.Windows.Forms.Button();
@@ -64,28 +64,11 @@
             this.customerGroupBox.TabStop = false;
             this.customerGroupBox.Text = "Customer Control";
             // 
-            // addCustomerbutton
-            // 
-            this.addCustomerbutton.BackColor = System.Drawing.Color.White;
-            this.addCustomerbutton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.addCustomerbutton.FlatAppearance.BorderSize = 3;
-            this.addCustomerbutton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGray;
-            this.addCustomerbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
-            this.addCustomerbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addCustomerbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addCustomerbutton.Location = new System.Drawing.Point(291, 32);
-            this.addCustomerbutton.Name = "addCustomerbutton";
-            this.addCustomerbutton.Size = new System.Drawing.Size(336, 65);
-            this.addCustomerbutton.TabIndex = 0;
-            this.addCustomerbutton.Text = "Add Customer";
-            this.addCustomerbutton.UseVisualStyleBackColor = false;
-            this.addCustomerbutton.Click += new System.EventHandler(this.addCustomerbutton_Click);
-            // 
             // showCustomerbutton
             // 
             this.showCustomerbutton.BackColor = System.Drawing.Color.White;
             this.showCustomerbutton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.showCustomerbutton.FlatAppearance.BorderSize = 3;
+            this.showCustomerbutton.FlatAppearance.BorderSize = 2;
             this.showCustomerbutton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGray;
             this.showCustomerbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
             this.showCustomerbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -97,6 +80,23 @@
             this.showCustomerbutton.Text = "Show Customer";
             this.showCustomerbutton.UseVisualStyleBackColor = false;
             this.showCustomerbutton.Click += new System.EventHandler(this.showCustomerbutton_Click);
+            // 
+            // addCustomerbutton
+            // 
+            this.addCustomerbutton.BackColor = System.Drawing.Color.White;
+            this.addCustomerbutton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.addCustomerbutton.FlatAppearance.BorderSize = 2;
+            this.addCustomerbutton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGray;
+            this.addCustomerbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
+            this.addCustomerbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addCustomerbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addCustomerbutton.Location = new System.Drawing.Point(291, 32);
+            this.addCustomerbutton.Name = "addCustomerbutton";
+            this.addCustomerbutton.Size = new System.Drawing.Size(336, 65);
+            this.addCustomerbutton.TabIndex = 0;
+            this.addCustomerbutton.Text = "Add Customer";
+            this.addCustomerbutton.UseVisualStyleBackColor = false;
+            this.addCustomerbutton.Click += new System.EventHandler(this.addCustomerbutton_Click);
             // 
             // staffGroupBox
             // 
@@ -114,7 +114,7 @@
             // showStaffbutton
             // 
             this.showStaffbutton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.showStaffbutton.FlatAppearance.BorderSize = 3;
+            this.showStaffbutton.FlatAppearance.BorderSize = 2;
             this.showStaffbutton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGray;
             this.showStaffbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
             this.showStaffbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -130,7 +130,7 @@
             // addStaffbutton
             // 
             this.addStaffbutton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.addStaffbutton.FlatAppearance.BorderSize = 3;
+            this.addStaffbutton.FlatAppearance.BorderSize = 2;
             this.addStaffbutton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGray;
             this.addStaffbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
             this.addStaffbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -146,7 +146,7 @@
             // exitButton
             // 
             this.exitButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.exitButton.FlatAppearance.BorderSize = 3;
+            this.exitButton.FlatAppearance.BorderSize = 2;
             this.exitButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGray;
             this.exitButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
             this.exitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

@@ -32,10 +32,12 @@ namespace _70126_SyntaxSyndicate_Project2
 
             //Getting auto customer id and account number
             Customer customer = new Customer();
-            customer.AccountNumber = textBoxAcctNum.Text;
+            customer.AccountNumber = Utils.GeneratedAccountNumber();
+            char[] letter = { 'A', 'B', 'C', 'D' };
+            customer.ID = Utils.GeneratedUserID(letter);   
             textBoxAcctNum.Text = customer.AccountNumber;
-            customer.ID = textBoxCustID.Text;
             textBoxCustID.Text = customer.ID;
+
 
             //adding plans to input
             comboBoxPlan.DataSource = Utils.Plans();

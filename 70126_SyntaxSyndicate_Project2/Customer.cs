@@ -30,19 +30,12 @@ namespace _70126_SyntaxSyndicate_Project2
         public string AccountNumber
         {
             get { return accountNumber; }
-            set { accountNumber = $"5585 {Utils.GenerateUniqueID()} {Utils.GenerateUniqueID()} {Utils.GenerateUniqueID()}"; }
+            set { accountNumber = value; }
         }
-        public override string ID
-        {
-            set
-            {
-                char[] letter = { 'A', 'B', 'C', 'D' };
-                base.ID = $"{Utils.GenerateUniqueLetter(letter)}-{Utils.GenerateUniqueID()}";
-            }
-        }
+       
         public override string DetailSaved()
         {
-            return $"{Name}&{LastName}&{PhoneNumber}&{Email}&{Address}&{Plan}&{Balance}&{Savings}&{ID}&{AccountNumber}&{Photo}";
+            return $"{Name}&{LastName}&{PhoneNumber}&{Email}&{Address}&{Plan}&{Balance}&{Savings}&{ID}{AccountNumber}&{Photo}";
         }
 
         }

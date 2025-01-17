@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +21,8 @@ namespace _70126_SyntaxSyndicate_Project2
             customerBalance.Text = balance.ToString();
             customerSavings.Text = savings.ToString();
         }
+      
+
         private void buttonWithdraw_Click(object sender, EventArgs e)
         {
             try
@@ -41,7 +44,6 @@ namespace _70126_SyntaxSyndicate_Project2
 
                 decimal newBalance = currentBalance - withdrawalAmount;
                 customerBalance.Text = newBalance.ToString();
-
                 MessageBox.Show("Withdrawal successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                textBoxWithdraw.Text = string.Empty;
             }
@@ -51,20 +53,7 @@ namespace _70126_SyntaxSyndicate_Project2
             }
         }
 
-        private void labelCustomerID_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void customerID_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void CustomerAccountControl_Load(object sender, EventArgs e)
-        {
-
-        }
+     
 
         private void buttonSaving_Click(object sender, EventArgs e)
         {
@@ -73,6 +62,7 @@ namespace _70126_SyntaxSyndicate_Project2
                 decimal currentSaving = Convert.ToDecimal(customerSavings.Text);
                 decimal currentBalance = Convert.ToDecimal(customerBalance.Text);
                 decimal savingAmount = Convert.ToDecimal(textBoxSaving.Text);
+                
 
                 if (savingAmount <= 0)
                 {
@@ -112,16 +102,10 @@ namespace _70126_SyntaxSyndicate_Project2
                     MessageBox.Show("Deposit amount must be greater than zero.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-
-                if (depositAmount > currentBalance)
-                {
-                    MessageBox.Show("Insufficient balance.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
                 decimal newBalance = currentBalance + depositAmount;
                 customerBalance.Text = newBalance.ToString();
 
+                Utils.UpdateCustomerBalanceInFile(customerID1.Text, newBalance);
                 MessageBox.Show("Deposit successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 textBoxDeposit.Text = string.Empty;
             }
@@ -133,7 +117,23 @@ namespace _70126_SyntaxSyndicate_Project2
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
-            this.Close();
+
         }
+
+        private void labelCustomerID_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void customerID_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CustomerAccountControl_Load(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

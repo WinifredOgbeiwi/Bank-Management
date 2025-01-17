@@ -55,8 +55,6 @@ namespace _70126_SyntaxSyndicate_Project2
         public virtual string DetailSaved()
         {
             return null;
-
-
         }
     }
 };
