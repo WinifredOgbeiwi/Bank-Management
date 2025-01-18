@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _70126_SyntaxSyndicate_Project2;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -99,10 +100,9 @@ namespace _70126_SyntaxSyndicate_Project2
 
         public void RefreshCustomerData()
         { 
-        //     Clear current data
+        
         customers.Clear();
 
-        //     Reload customer data from the file
              try
              {
                  FileStream fileStream = new FileStream("CustomerFile.txt", FileMode.Open, FileAccess.Read);
@@ -138,7 +138,6 @@ namespace _70126_SyntaxSyndicate_Project2
                  fileReader.Close();
 fileStream.Close();
 
-//If customers are available, update the displayed details
                  if (customers.Count > 0)
                  {
                      CustomerDetails(customers[displayCustomerIndex]);
@@ -202,5 +201,16 @@ private void buttonControlBal_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+        private void buttonCustomerEdit_Click(object sender, EventArgs e)
+        {
+            Customer selectedCustomer = customers[displayCustomerIndex];
+            EditCustomer editCustomer = new EditCustomer(selectedCustomer.Name,selectedCustomer.LastName, selectedCustomer.Email,selectedCustomer.PhoneNumber,selectedCustomer.Address, selectedCustomer.Plan, selectedCustomer.Photo,selectedCustomer.ID,selectedCustomer.AccountNumber,selectedCustomer.Balance, selectedCustomer.Savings );
+            editCustomer.ShowDialog();
+            RefreshCustomerData();
+
+
+        }
     }
+
 }

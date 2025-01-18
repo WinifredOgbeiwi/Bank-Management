@@ -297,6 +297,7 @@
             this.buttonCustomerEdit.TabIndex = 37;
             this.buttonCustomerEdit.Text = "Edit";
             this.buttonCustomerEdit.UseVisualStyleBackColor = true;
+            this.buttonCustomerEdit.Click += new System.EventHandler(this.buttonCustomerEdit_Click);
             // 
             // pictureBox1
             // 

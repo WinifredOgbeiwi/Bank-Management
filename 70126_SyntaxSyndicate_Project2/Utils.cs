@@ -10,6 +10,7 @@ using System.Xml.Linq;
 using System.Drawing;
 using System.IO;
 using _70126_SyntaxSyndicate_Project2;
+using System.Net;
 
 namespace _70126_SyntaxSyndicate_Project2
 {
@@ -143,6 +144,50 @@ namespace _70126_SyntaxSyndicate_Project2
             }
         }
 
+
+
+        public static void UpdateCustomerInFile(string customerId, string name, string lastName, string email, string phoneNumber, string address, string plan, string photo, string accountNum, decimal balance, decimal savings)
+            {
+            string filePath = "CustomerFile.txt";
+            List<string> customerFile = new List<string>();
+
+            try
+            {
+                customerFile = File.ReadAllLines(filePath).ToList();
+
+                for (int i = 0; i < customerFile.Count; i++)
+                {
+                    string[] section = customerFile[i].Split('&');
+                    if (section[8].Trim() == customerId)
+                    {
+                        section[0] = name.Trim();
+                        section[1] = lastName.Trim();
+                        section[2] = phoneNumber.Trim();
+                        section[3] = email.Trim();
+                        section[4] = address.Trim();
+                        section[5] = plan.Trim();
+                        section[6] = balance.ToString();
+                        section[7] = savings.ToString();
+                        section[9] = accountNum.Trim();
+                        if (!string.IsNullOrEmpty(photo))
+                        {
+                            section[10] = photo.Trim();
+                        }
+                        
+
+                        customerFile[i] = string.Join("&", section);
+                        break;
+                    }
+                }
+
+
+                File.WriteAllLines(filePath, customerFile);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while updating the file: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
         //capitalized text
         public static string capitalized(string text)
