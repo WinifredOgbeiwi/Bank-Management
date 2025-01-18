@@ -55,10 +55,6 @@ namespace _70126_SyntaxSyndicate_Project2
             }
         }
 
-        private void buttonExit_Click(object sender, EventArgs e)
-        {
-        this.Close();
-        }
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
@@ -79,6 +75,11 @@ namespace _70126_SyntaxSyndicate_Project2
             Utils utils = new Utils();
             utils.SaveFile("CustomerFile.txt", customer.DetailSaved(), "Customer details saved");
 
+        }
+
+        private void buttonExit_Add_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

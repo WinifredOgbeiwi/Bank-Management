@@ -18,6 +18,7 @@ namespace _70126_SyntaxSyndicate_Project2
         public ShowCustomerForm()
         {
             InitializeComponent();
+           
         }
         private List<Customer> customers = new List<Customer>();
         private int displayCustomerIndex = 0;
@@ -33,7 +34,7 @@ namespace _70126_SyntaxSyndicate_Project2
                     string customerDetails = fileReader.ReadLine();
                     string[] section = customerDetails.Split('&');
 
-                    if (section.Length == 11) // Ensure there are 11 parts for a valid customer
+                    if (section.Length == 11) 
                     {
                         customers.Add(new Customer
                         {
@@ -55,11 +56,11 @@ namespace _70126_SyntaxSyndicate_Project2
                         MessageBox.Show("Customer data format is incorrect, skipping this entry.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-
+                labelPagination.Text = $" {displayCustomerIndex + 1} from {customers.Count}";
                 fileReader.Close();
                 fileStream.Close();
 
-                // Display the first customer if available
+              
                 if (customers.Count > 0)
                 {
                     CustomerDetails(customers[displayCustomerIndex]);
@@ -91,32 +92,10 @@ namespace _70126_SyntaxSyndicate_Project2
             pictureBox1.ImageLocation = customer.Photo;
         }
 
-        private void buttonPrev_Click(object sender, EventArgs e)
-        {
-            if (customers.Count > 0 && displayCustomerIndex > 0)
-            {
-                displayCustomerIndex--;
-                CustomerDetails(customers[displayCustomerIndex]);
-            }
-            else
-            {
-                MessageBox.Show("This is the first customer.", "Navigation Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-        }
 
 
-        private void buttonNext_Click_1(object sender, EventArgs e)
-        {
-            if (customers.Count > 0 && displayCustomerIndex < customers.Count - 1)
-            {
-                displayCustomerIndex++;
-                CustomerDetails(customers[displayCustomerIndex]);
-            }
-            else
-            {
-                MessageBox.Show("This is the last customer.", "Navigation Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-        }
+
+    
 
         public void RefreshCustomerData()
         {
@@ -189,12 +168,39 @@ namespace _70126_SyntaxSyndicate_Project2
             RefreshCustomerData();
         }
 
-        private void buttonExit_Click(object sender, EventArgs e)
+        private void buttonPrev_Click_1(object sender, EventArgs e)
         {
-            this.Close();
+
+            if (customers.Count > 0 && displayCustomerIndex > 0)
+            {
+                displayCustomerIndex--;
+                CustomerDetails(customers[displayCustomerIndex]);
+                labelPagination.Text = $" {displayCustomerIndex + 1} from {customers.Count}";
+            }
+            else
+            {
+                MessageBox.Show("This is the first customer.", "Navigation Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
 
         }
 
+        private void buttonNext_Click(object sender, EventArgs e)
+        {
+            if (customers.Count > 0 && displayCustomerIndex < customers.Count - 1)
+            {
+                displayCustomerIndex++;
+                CustomerDetails(customers[displayCustomerIndex]);
+                labelPagination.Text = $" {displayCustomerIndex + 1} from {customers.Count}";
+            }
+            else
+            {
+                MessageBox.Show("This is the last customer.", "Navigation Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
 
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

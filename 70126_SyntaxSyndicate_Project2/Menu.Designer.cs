@@ -35,6 +35,7 @@
             this.addCustomerbutton = new System.Windows.Forms.Button();
             this.showCustomerbutton = new System.Windows.Forms.Button();
             this.customerGroupBox = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.staffGroupBox.SuspendLayout();
             this.customerGroupBox.SuspendLayout();
             this.SuspendLayout();
@@ -42,10 +43,9 @@
             // exitButton
             // 
             this.exitButton.BackColor = System.Drawing.Color.Indigo;
-            this.exitButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.exitButton.FlatAppearance.BorderSize = 0;
-            this.exitButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGray;
-            this.exitButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
+            this.exitButton.FlatAppearance.BorderColor = System.Drawing.Color.DarkOrchid;
+            this.exitButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkOrchid;
+            this.exitButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Violet;
             this.exitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exitButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exitButton.ForeColor = System.Drawing.Color.White;
@@ -151,6 +151,24 @@
             this.customerGroupBox.TabStop = false;
             this.customerGroupBox.Text = "Customer Control";
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.DarkOrchid;
+            this.button1.FlatAppearance.BorderSize = 2;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkOrchid;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Violet;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(61, 25);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(336, 68);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "TEST";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -158,6 +176,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(496, 758);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.customerGroupBox);
             this.Controls.Add(this.staffGroupBox);
             this.Controls.Add(this.exitButton);
@@ -183,5 +202,6 @@
         private System.Windows.Forms.Button addCustomerbutton;
         private System.Windows.Forms.Button showCustomerbutton;
         private System.Windows.Forms.GroupBox customerGroupBox;
+        private System.Windows.Forms.Button button1;
     }
 }

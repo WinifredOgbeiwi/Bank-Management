@@ -51,5 +51,9 @@ namespace _70126_SyntaxSyndicate_Project2
 
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+          
+        }
     }
 }
