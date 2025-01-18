@@ -53,9 +53,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.pathname = new System.Windows.Forms.Label();
-            this.pictureBox = new System.Windows.Forms.PictureBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.buttonExit_Add = new System.Windows.Forms.Button();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -307,7 +306,7 @@
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(0, 0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(1199, 96);
+            this.button1.Size = new System.Drawing.Size(1073, 96);
             this.button1.TabIndex = 27;
             this.button1.Text = "Add Customer";
             this.button1.UseVisualStyleBackColor = false;
@@ -324,24 +323,6 @@
             this.pathname.TabIndex = 26;
             this.pathname.Text = "label3";
             this.pathname.Visible = false;
-            // 
-            // pictureBox
-            // 
-            this.pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox.Image = global::_70126_SyntaxSyndicate_Project2.Properties.Resources.imagePlaceholder;
-            this.pictureBox.Location = new System.Drawing.Point(710, 132);
-            this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(319, 263);
-            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox.TabIndex = 20;
-            this.pictureBox.TabStop = false;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(0, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 0;
             // 
             // buttonExit_Add
             // 
@@ -361,6 +342,17 @@
             this.buttonExit_Add.UseVisualStyleBackColor = false;
             this.buttonExit_Add.Click += new System.EventHandler(this.buttonExit_Add_Click);
             // 
+            // pictureBox
+            // 
+            this.pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox.Image = global::_70126_SyntaxSyndicate_Project2.Properties.Resources.imagePlaceholder;
+            this.pictureBox.Location = new System.Drawing.Point(710, 132);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(319, 263);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox.TabIndex = 20;
+            this.pictureBox.TabStop = false;
+            // 
             // AddCustomerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -368,7 +360,6 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1072, 829);
             this.Controls.Add(this.buttonExit_Add);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pathname);
             this.Controls.Add(this.label1);
@@ -433,7 +424,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label pathname;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button buttonExit_Add;
     }
 }

@@ -30,6 +30,9 @@
         {
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // button2
@@ -66,6 +69,28 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // pictureBoxLogo
+            // 
+            this.pictureBoxLogo.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxLogo.BackgroundImage = global::_70126_SyntaxSyndicate_Project2.Properties.Resources.Logo;
+            this.pictureBoxLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBoxLogo.Location = new System.Drawing.Point(39, 100);
+            this.pictureBoxLogo.Name = "pictureBoxLogo";
+            this.pictureBoxLogo.Size = new System.Drawing.Size(419, 337);
+            this.pictureBoxLogo.TabIndex = 3;
+            this.pictureBoxLogo.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Indigo;
+            this.label1.Location = new System.Drawing.Point(133, 372);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(221, 54);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Welcome !";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -74,6 +99,8 @@
             this.BackgroundImage = global::_70126_SyntaxSyndicate_Project2.Properties.Resources.WhatsApp_Image_2025_01_17_at_19_41_03_93fc4312;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(496, 886);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.pictureBoxLogo);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -83,13 +110,17 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Syndicate Bank";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox pictureBoxLogo;
+        private System.Windows.Forms.Label label1;
     }
 }
 

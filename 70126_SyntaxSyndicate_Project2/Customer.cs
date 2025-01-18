@@ -9,23 +9,25 @@ namespace _70126_SyntaxSyndicate_Project2
 {
     internal class Customer : Person
     {
-        private string plan, accountNumber;
-        private int balance, savings;
+        private string plan, accountNumber, balance,savings;
         public string Plan
         {
             get { return plan; }
-            set { plan = value; }
+            set { 
+                
+                plan = value;
+            }
         }
 
-        public decimal Balance
+        public string Balance
         {
             get { return balance; }
-            set { balance = Utils.ValidateEdge((int)value); }
+            set { balance = Utils.ValidateEdge(Convert.ToInt32(value)).ToString(); }
         }
-        public decimal Savings
+        public string Savings
         {
             get { return savings; }
-            set { savings = Utils.ValidateEdge(0); }
+            set { savings = Utils.ValidateEdge(0).ToString(); }
         }
         public string AccountNumber
         {
@@ -35,7 +37,7 @@ namespace _70126_SyntaxSyndicate_Project2
        
         public override string DetailSaved()
         {
-            return $"{Name}&{LastName}&{PhoneNumber}&{Email}&{Address}&{Plan}&{Balance}&{Savings}&{ID}{AccountNumber}&{Photo}";
+            return $"{Name}&{LastName}&{PhoneNumber}&{Email}&{Address}&{Plan}&{Balance}&{Savings}&{ID}&{AccountNumber}&{Photo}";
         }
 
         }

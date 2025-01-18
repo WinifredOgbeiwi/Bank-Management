@@ -13,13 +13,13 @@ namespace _70126_SyntaxSyndicate_Project2
 {
     public partial class CustomerAccountControl : Form
     {
-        public CustomerAccountControl(string accountNumber,string customerID, decimal balance, decimal savings)
+        public CustomerAccountControl(string accountNumber,string customerID, string balance, string savings)
         {
             InitializeComponent();
             customerAcctNum.Text = accountNumber;
             customerID1.Text = customerID;
-            customerBalance.Text = balance.ToString();
-            customerSavings.Text = savings.ToString();
+            customerBalance.Text = balance;
+            customerSavings.Text = savings;
         }
       
 
@@ -135,5 +135,9 @@ namespace _70126_SyntaxSyndicate_Project2
 
         }
 
+        private void textBoxWithdraw_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

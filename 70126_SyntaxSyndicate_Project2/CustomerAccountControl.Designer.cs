@@ -184,6 +184,7 @@
             this.textBoxWithdraw.Name = "textBoxWithdraw";
             this.textBoxWithdraw.Size = new System.Drawing.Size(197, 26);
             this.textBoxWithdraw.TabIndex = 48;
+            this.textBoxWithdraw.TextChanged += new System.EventHandler(this.textBoxWithdraw_TextChanged);
             // 
             // label6
             // 

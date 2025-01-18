@@ -9,28 +9,16 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using System.Xml.Linq;
 using System.Drawing;
 using System.IO;
+using _70126_SyntaxSyndicate_Project2;
 
 namespace _70126_SyntaxSyndicate_Project2
 {
     internal class Utils
     {
         //VALIDATION OF EMAIL
-        public bool IsValidEmail(string email)
-        {
-            try
-            {
-                // Regular expression pattern for valid email
-                var emailPattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
-                return Regex.IsMatch(email, emailPattern);
-            }
-            catch
-            {
-                return false;
-            }
-        }
+      
 
-
-        //ERROR MESSAGESES
+       // ERROR MESSAGESES
 
 
         //ID  - (1) random letters (2) random numbers
@@ -156,8 +144,74 @@ namespace _70126_SyntaxSyndicate_Project2
         }
 
 
-        //RELOAD
-    
+        //capitalized text
+        public static string capitalized(string text)
+        {
+            char text1 = text[0];
+            string fullText = text1.ToString().ToUpper() + text.Substring(1).ToLower();
+            return fullText;
+        }
 
+        //validation
+        public static bool IsValidEmail(string email)
+        {
+            try
+            {
+                // Regular expression pattern for valid email
+                var emailPattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
+                return Regex.IsMatch(email, emailPattern);
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public static string FieldsValidation(Customer customer)
+        {
+            if (customer.Name == "Name")
+            {
+                return "Please enter a name";
+            }
+
+            else if ( customer.LastName == "Last Name")
+            {
+                return "Please enter a last name";
+            }
+
+            else if (customer.PhoneNumber == "123456789" )
+            {
+                return "Please enter a phone number";
+            }
+
+            else if (customer.PhoneNumber.Length != 9)
+            {
+                return "Phone Number must be 9 characters";
+            }
+
+            else if (!customer.PhoneNumber.All(char.IsDigit))
+            {
+                return "Phone Number must contain only digits";
+            }
+            else if ( customer.Email == "your@email.com")
+            {
+                return "Please enter an email";
+            }
+            else if (!IsValidEmail(customer.Email))
+            {
+                return "Please enter a valid email";
+            }
+            else if ( customer.Address == "ul.street 1/w2,01-234,city")
+            {
+                return "Please enter an address";
+            }
+    
+            else if (customer.Photo == "label3")
+            {
+                return "Please upload a photo";
+            }
+            return null;
+        }
     }
+
 }

@@ -25,9 +25,9 @@ namespace _70126_SyntaxSyndicate_Project2
             utils.SetPlaceholder(textBoxName, "Name");
             utils.SetPlaceholder(textBoxLastName, "Last Name");
             utils.SetPlaceholder(textBoxEmail, "your@email.com");
-            utils.SetPlaceholder(textBoxAddress, "ul.123 address 789");
-            utils.SetPlaceholder(textBoxBalance, "1000");
-            utils.SetPlaceholder(textBoxContact, "+48 578 3728 243");
+            utils.SetPlaceholder(textBoxAddress, "ul.street 1/w2,01-234,city");
+            utils.SetPlaceholder(textBoxBalance, "0000");
+            utils.SetPlaceholder(textBoxContact, "123456789");
             utils.SetComboBoxPlaceholder(comboBoxPlan);
 
             //Getting auto customer id and account number
@@ -46,35 +46,52 @@ namespace _70126_SyntaxSyndicate_Project2
         private void buttonPicture_Click(object sender, EventArgs e)
         {
             openFileDialog1.Filter = "Image Files|*.png;*.jpg;*.jpeg";
-            openFileDialog1.Title = "Select Profile Image";
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 pictureBox.Image = Image.FromFile(openFileDialog1.FileName);
                 pathname.Text = openFileDialog1.FileName;
-
             }
         }
 
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-
-           
             Customer customer = new Customer();
+
             customer.Name = textBoxName.Text;
             customer.Email = textBoxEmail.Text;
             customer.LastName = textBoxLastName.Text;
             customer.Address = textBoxAddress.Text;
             customer.PhoneNumber = textBoxContact.Text;
-            customer.Balance = Convert.ToInt32(textBoxBalance.Text);
+            customer.Balance = textBoxBalance.Text;
             customer.Plan = comboBoxPlan.SelectedItem.ToString();
-            customer.Savings = 0;
+            customer.Savings = 0.ToString();
             customer.AccountNumber = textBoxAcctNum.Text;
             customer.ID = textBoxCustID.Text;
-           customer.Photo = pathname.Text;
-            Utils utils = new Utils();
-            utils.SaveFile("CustomerFile.txt", customer.DetailSaved(), "Customer details saved");
+            customer.Photo = pathname.Text;
 
+            string validation = Utils.FieldsValidation(customer);
+               
+
+            if (validation != null)
+            {
+                MessageBox.Show(validation, " Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+            }
+            else if (string.IsNullOrWhiteSpace(customer.Balance) || customer.Balance == "0")
+            {
+                MessageBox.Show("Please enter a valid balance greater than zero", " Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+            }
+
+            else if (string.IsNullOrWhiteSpace(customer.Plan) || customer.Plan == "Plan")
+            {
+                MessageBox.Show("Please select a plan", " Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+            }
+            else
+            {
+       
+                Utils utils = new Utils();
+                utils.SaveFile("CustomerFile.txt", customer.DetailSaved(), "Customer details saved");
+            }
         }
 
         private void buttonExit_Add_Click(object sender, EventArgs e)

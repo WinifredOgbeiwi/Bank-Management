@@ -8,10 +8,10 @@ using System.Windows.Forms.VisualStyles;
 
 namespace _70126_SyntaxSyndicate_Project2
 {
-    internal class Person:Utils
+    internal class Person
     {
 
-        private string name, lastName, photo, address, email, phoneNumber, id;
+        private string name, lastName, photo, address, email, id , phoneNumber;
 
         public string Name
         {
