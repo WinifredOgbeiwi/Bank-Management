@@ -212,51 +212,84 @@ namespace _70126_SyntaxSyndicate_Project2
             }
         }
 
-        public static string FieldsValidation(Customer customer)
+        public static string FieldsValidation(Person person)
         {
-            if (customer.Name == "Name")
+            if (person.Name == "Name")
             {
                 return "Please enter a name";
             }
 
-            else if ( customer.LastName == "Last Name")
+            else if ( person.LastName == "Last Name")
             {
                 return "Please enter a last name";
             }
 
-            else if (customer.PhoneNumber == "123456789" )
+            else if (person.PhoneNumber == "123456789" )
             {
                 return "Please enter a phone number";
             }
 
-            else if (customer.PhoneNumber.Length != 9)
+            else if (person.PhoneNumber.Length != 9)
             {
                 return "Phone Number must be 9 characters";
             }
 
-            else if (!customer.PhoneNumber.All(char.IsDigit))
+            else if (!person.PhoneNumber.All(char.IsDigit))
             {
                 return "Phone Number must contain only digits";
             }
-            else if ( customer.Email == "your@email.com")
+            else if ( person.Email == "your@email.com")
             {
                 return "Please enter an email";
             }
-            else if (!IsValidEmail(customer.Email))
+            else if (!IsValidEmail(person.Email))
             {
                 return "Please enter a valid email";
             }
-            else if ( customer.Address == "ul.street 1/w2,01-234,city")
+            else if ( person.Address == "ul.street 1/w2,01-234,city")
             {
                 return "Please enter an address";
             }
     
-            else if (customer.Photo == "label3")
+            else if (person.Photo == "label3")
             {
                 return "Please upload a photo";
             }
             return null;
         }
+
+     
+        public enum Role
+        {
+           
+            Manager = 50,      
+            Developer = 40,    
+            Designer = 35,    
+            Tester = 30,
+            Intern = 20
+        }
+
+        //public static class RoleExtensions
+        //{
+        //    public static decimal GetExtraHourRate(this Role role)
+        //    {
+        //        switch (role)
+        //        {
+        //            case Role.Manager:
+        //                return 75; // Extra hour rate
+        //            case Role.Developer:
+        //                return 60;
+        //            case Role.Designer:
+        //                return 50;
+        //            case Role.Tester:
+        //                return 45;
+        //            case Role.Intern:
+        //                return 25;
+        //            default:
+        //                return 0;
+        //        }
+        //    }
+        //}
     }
 
 }

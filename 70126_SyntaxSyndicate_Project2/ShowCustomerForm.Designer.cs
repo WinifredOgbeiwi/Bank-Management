@@ -88,7 +88,7 @@
             this.groupBoxShowCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxShowCustomer.Location = new System.Drawing.Point(8, 113);
             this.groupBoxShowCustomer.Name = "groupBoxShowCustomer";
-            this.groupBoxShowCustomer.Size = new System.Drawing.Size(1026, 750);
+            this.groupBoxShowCustomer.Size = new System.Drawing.Size(1026, 749);
             this.groupBoxShowCustomer.TabIndex = 2;
             this.groupBoxShowCustomer.TabStop = false;
             this.groupBoxShowCustomer.Text = "Customer Information";
@@ -366,9 +366,9 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI Black", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(-2, 0);
+            this.button1.Location = new System.Drawing.Point(-3, 0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(1036, 107);
+            this.button1.Size = new System.Drawing.Size(1042, 107);
             this.button1.TabIndex = 46;
             this.button1.Text = "Customer Details";
             this.button1.TextAlign = System.Drawing.ContentAlignment.TopCenter;

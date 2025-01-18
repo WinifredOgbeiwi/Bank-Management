@@ -48,13 +48,12 @@
             this.comboBoxPlan = new System.Windows.Forms.ComboBox();
             this.buttonPicture = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.buttonSave = new System.Windows.Forms.Button();
-            this.buttonExitAdd = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.pathname = new System.Windows.Forms.Label();
-            this.buttonExit_Add = new System.Windows.Forms.Button();
             this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.buttonSave = new System.Windows.Forms.Button();
+            this.buttonExit_Add = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -266,30 +265,6 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // buttonSave
-            // 
-            this.buttonSave.BackColor = System.Drawing.Color.Indigo;
-            this.buttonSave.FlatAppearance.BorderSize = 0;
-            this.buttonSave.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkViolet;
-            this.buttonSave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Violet;
-            this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSave.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSave.ForeColor = System.Drawing.Color.White;
-            this.buttonSave.Location = new System.Drawing.Point(30, 685);
-            this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(406, 62);
-            this.buttonSave.TabIndex = 22;
-            this.buttonSave.Text = "Save";
-            this.buttonSave.UseVisualStyleBackColor = false;
-            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
-            // 
-            // buttonExitAdd
-            // 
-            this.buttonExitAdd.Location = new System.Drawing.Point(0, 0);
-            this.buttonExitAdd.Name = "buttonExitAdd";
-            this.buttonExitAdd.Size = new System.Drawing.Size(75, 23);
-            this.buttonExitAdd.TabIndex = 28;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -304,7 +279,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI Black", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Location = new System.Drawing.Point(0, -1);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(1073, 96);
             this.button1.TabIndex = 27;
@@ -324,6 +299,34 @@
             this.pathname.Text = "label3";
             this.pathname.Visible = false;
             // 
+            // pictureBox
+            // 
+            this.pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox.Image = global::_70126_SyntaxSyndicate_Project2.Properties.Resources.imagePlaceholder;
+            this.pictureBox.Location = new System.Drawing.Point(710, 132);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(319, 263);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox.TabIndex = 20;
+            this.pictureBox.TabStop = false;
+            // 
+            // buttonSave
+            // 
+            this.buttonSave.BackColor = System.Drawing.Color.Indigo;
+            this.buttonSave.FlatAppearance.BorderSize = 0;
+            this.buttonSave.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkViolet;
+            this.buttonSave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Violet;
+            this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSave.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSave.ForeColor = System.Drawing.Color.White;
+            this.buttonSave.Location = new System.Drawing.Point(30, 685);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(406, 62);
+            this.buttonSave.TabIndex = 22;
+            this.buttonSave.Text = "Save";
+            this.buttonSave.UseVisualStyleBackColor = false;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
+            // 
             // buttonExit_Add
             // 
             this.buttonExit_Add.BackColor = System.Drawing.Color.White;
@@ -342,28 +345,17 @@
             this.buttonExit_Add.UseVisualStyleBackColor = false;
             this.buttonExit_Add.Click += new System.EventHandler(this.buttonExit_Add_Click);
             // 
-            // pictureBox
-            // 
-            this.pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox.Image = global::_70126_SyntaxSyndicate_Project2.Properties.Resources.imagePlaceholder;
-            this.pictureBox.Location = new System.Drawing.Point(710, 132);
-            this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(319, 263);
-            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox.TabIndex = 20;
-            this.pictureBox.TabStop = false;
-            // 
             // AddCustomerForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1072, 829);
+            this.ClientSize = new System.Drawing.Size(1053, 829);
             this.Controls.Add(this.buttonExit_Add);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pathname);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.buttonExitAdd);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.buttonPicture);
             this.Controls.Add(this.pictureBox);
@@ -385,6 +377,7 @@
             this.Controls.Add(this.labelContact);
             this.Controls.Add(this.labelLastName);
             this.Controls.Add(this.labelName);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "AddCustomerForm";
@@ -419,11 +412,10 @@
         private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.Button buttonPicture;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.Button buttonSave;
-        private System.Windows.Forms.Button buttonExitAdd;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label pathname;
+        private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.Button buttonExit_Add;
     }
 }

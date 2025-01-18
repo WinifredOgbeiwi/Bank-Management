@@ -11,7 +11,8 @@ namespace _70126_SyntaxSyndicate_Project2
     internal class Person
     {
 
-        private string name, lastName, photo, address, email, id , phoneNumber;
+        private string name, lastName, photo, address, email, id, phoneNumber;
+        private decimal balance;
 
         public string Name
         {
@@ -51,6 +52,11 @@ namespace _70126_SyntaxSyndicate_Project2
         {
             get { return id; }
             set { id = value; }
+        }
+        public decimal Balance
+        {
+            get { return balance; }
+            set { balance = Utils.ValidateEdge(Convert.ToInt16(value)); }
         }
         public virtual string DetailSaved()
         {

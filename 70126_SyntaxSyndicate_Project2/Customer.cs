@@ -10,7 +10,7 @@ namespace _70126_SyntaxSyndicate_Project2
     internal class Customer : Person
     {
         private string plan, accountNumber;
-        private decimal balance, savings;
+        private decimal savings;
         public string Plan
         {
             get { return plan; }
@@ -20,11 +20,7 @@ namespace _70126_SyntaxSyndicate_Project2
             }
         }
 
-        public decimal Balance
-        {
-            get { return balance; }
-            set { balance = Utils.ValidateEdge(Convert.ToInt16(value)); }
-        }
+   
         public decimal Savings
         {
             get { return savings; }

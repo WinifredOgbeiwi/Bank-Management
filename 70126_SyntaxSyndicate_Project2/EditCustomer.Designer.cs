@@ -389,8 +389,9 @@
             // 
             // EditCustomer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1270, 798);
             this.Controls.Add(this.textBoxSavings);
@@ -421,7 +422,9 @@
             this.Controls.Add(this.labelContact);
             this.Controls.Add(this.labelLastName);
             this.Controls.Add(this.labelName);
+            this.MaximizeBox = false;
             this.Name = "EditCustomer";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditCustomer";
             this.Load += new System.EventHandler(this.EditCustomer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();

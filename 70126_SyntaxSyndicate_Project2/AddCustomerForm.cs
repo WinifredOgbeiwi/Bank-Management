@@ -77,10 +77,6 @@ namespace _70126_SyntaxSyndicate_Project2
             {
                 MessageBox.Show(validation, " Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
             }
-            else if (string.IsNullOrWhiteSpace(balanceText) || customer.Balance <= 0)
-            {
-                MessageBox.Show("Please enter a valid balance greater than zero", " Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
-            }
 
             else if (string.IsNullOrWhiteSpace(customer.Plan) || customer.Plan == "Plan")
             {

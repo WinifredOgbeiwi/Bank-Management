@@ -65,6 +65,7 @@
     <Compile Include="CustomerAccountControl.Designer.cs">
       <DependentUpon>CustomerAccountControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomerValidation.cs" />
     <Compile Include="EditCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +101,7 @@
     </Compile>
     <Compile Include="Staff.cs" />
     <Compile Include="Utils.cs" />
+    <Compile Include="Validation.cs" />
     <EmbeddedResource Include="AddCustomerForm.resx">
       <DependentUpon>AddCustomerForm.cs</DependentUpon>
     </EmbeddedResource>
