@@ -9,7 +9,8 @@ namespace _70126_SyntaxSyndicate_Project2
 {
     internal class Customer : Person
     {
-        private string plan, accountNumber, balance,savings;
+        private string plan, accountNumber;
+        private decimal balance, savings;
         public string Plan
         {
             get { return plan; }
@@ -19,15 +20,15 @@ namespace _70126_SyntaxSyndicate_Project2
             }
         }
 
-        public string Balance
+        public decimal Balance
         {
             get { return balance; }
-            set { balance = Utils.ValidateEdge(Convert.ToInt32(value)).ToString(); }
+            set { balance = Utils.ValidateEdge(Convert.ToInt16(value)); }
         }
-        public string Savings
+        public decimal Savings
         {
             get { return savings; }
-            set { savings = Utils.ValidateEdge(0).ToString(); }
+            set { savings = Utils.ValidateEdge(0); }
         }
         public string AccountNumber
         {

@@ -63,21 +63,21 @@ namespace _70126_SyntaxSyndicate_Project2
             customer.LastName = textBoxLastName.Text;
             customer.Address = textBoxAddress.Text;
             customer.PhoneNumber = textBoxContact.Text;
-            customer.Balance = textBoxBalance.Text;
+            customer.Balance = Convert.ToDecimal(textBoxBalance.Text);
             customer.Plan = comboBoxPlan.SelectedItem.ToString();
-            customer.Savings = 0.ToString();
+            customer.Savings = Convert.ToDecimal(0);
             customer.AccountNumber = textBoxAcctNum.Text;
             customer.ID = textBoxCustID.Text;
             customer.Photo = pathname.Text;
 
             string validation = Utils.FieldsValidation(customer);
-               
+               string balanceText = customer.Balance.ToString();
 
             if (validation != null)
             {
                 MessageBox.Show(validation, " Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
             }
-            else if (string.IsNullOrWhiteSpace(customer.Balance) || customer.Balance == "0")
+            else if (string.IsNullOrWhiteSpace(balanceText) || customer.Balance <= 0)
             {
                 MessageBox.Show("Please enter a valid balance greater than zero", " Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
             }

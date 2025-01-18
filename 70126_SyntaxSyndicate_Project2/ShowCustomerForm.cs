@@ -29,9 +29,9 @@ namespace _70126_SyntaxSyndicate_Project2
             customerEmail.Text = customer.Email;
             customerContact.Text = customer.PhoneNumber;
             customerAddress.Text = customer.Address;
-            customerBalance.Text = customer.Balance;
+            customerBalance.Text = customer.Balance.ToString();
             customerPlan.Text = customer.Plan;
-            customerSavings.Text = customer.Savings;
+            customerSavings.Text = customer.Savings.ToString();
             customerAcctNum.Text = customer.AccountNumber;
             customerID.Text = customer.ID;
             pictureBox1.ImageLocation = customer.Photo;
@@ -57,8 +57,8 @@ namespace _70126_SyntaxSyndicate_Project2
                             Email = section[3].Trim(),
                             Address = section[4].Trim(),
                             Plan = section[5].Trim(),
-                            Balance = section[6].Trim(), 
-                            Savings = section[7].Trim(),
+                            Balance = Convert.ToDecimal(section[6].Trim()), 
+                            Savings = Convert.ToDecimal(section[7].Trim()),
                             ID = section[8].Trim(),
                             AccountNumber = section[9].Trim(),
                             Photo = section[10].Trim()
@@ -122,8 +122,8 @@ namespace _70126_SyntaxSyndicate_Project2
                              Email = section[3].Trim(),
                              Address = section[4].Trim(),
                              Plan = section[5].Trim(),
-                             Balance = section[6].Trim(),
-                             Savings = section[7].Trim(),
+                             Balance = Convert.ToDecimal(section[6].Trim()),
+                             Savings = Convert.ToDecimal(section[7].Trim()),
                              ID = section[8].Trim(),
                              AccountNumber = section[9].Trim(),
                              Photo = section[10].Trim()

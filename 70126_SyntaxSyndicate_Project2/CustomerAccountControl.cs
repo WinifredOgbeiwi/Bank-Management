@@ -13,13 +13,13 @@ namespace _70126_SyntaxSyndicate_Project2
 {
     public partial class CustomerAccountControl : Form
     {
-        public CustomerAccountControl(string accountNumber,string customerID, string balance, string savings)
+        public CustomerAccountControl(string accountNumber,string customerID, decimal balance, decimal savings)
         {
             InitializeComponent();
             customerAcctNum.Text = accountNumber;
             customerID1.Text = customerID;
-            customerBalance.Text = balance;
-            customerSavings.Text = savings;
+            customerBalance.Text = balance.ToString();
+            customerSavings.Text = savings.ToString();
         }
       
 
@@ -44,6 +44,7 @@ namespace _70126_SyntaxSyndicate_Project2
 
                 decimal newBalance = currentBalance - withdrawalAmount;
                 customerBalance.Text = newBalance.ToString();
+                Utils.UpdateCustomerBalanceInFile(customerID1.Text, newBalance);
                 MessageBox.Show("Withdrawal successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                textBoxWithdraw.Text = string.Empty;
             }
@@ -80,7 +81,7 @@ namespace _70126_SyntaxSyndicate_Project2
                 decimal newBalanceSaving = savingAmount + currentSaving;
                 customerSavings.Text = newBalanceSaving.ToString();
                 customerBalance.Text = newBalance.ToString();
-
+                Utils.UpdateCustomerBalanceInFile(customerID1.Text, newBalance);
                 MessageBox.Show("Saving successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 textBoxSaving.Text = string.Empty;
             }
@@ -136,6 +137,26 @@ namespace _70126_SyntaxSyndicate_Project2
         }
 
         private void textBoxWithdraw_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelBalance_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelSavings_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelAcctNum_Click(object sender, EventArgs e)
         {
 
         }
