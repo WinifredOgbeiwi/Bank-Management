@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,7 +32,6 @@ namespace _70126_SyntaxSyndicate_Project2
             utils.SetPlaceholder(textBoxLastName, "Last Name");
             utils.SetPlaceholder(textBoxEmail, "your@email.com");
             utils.SetPlaceholder(textBoxAddress, "ul.street 1/w2,01-234,city");
-            utils.SetPlaceholder(textBoxBalance, "0000");
             utils.SetPlaceholder(textBoxContact, "123456789");
             utils.SetComboBoxPlaceholder(comboBoxRole);
 
@@ -44,10 +44,8 @@ namespace _70126_SyntaxSyndicate_Project2
             textBoxCustID.Text = customer.ID;
 
             ////adding role to input
-           comboBoxRole.Items.Insert(0, "Select a role");
+            comboBoxRole.DataSource = Enum.GetNames(typeof(Role));
 
-        
-            comboBoxRole.DataSource = Enum.GetValues(typeof(Utils.Role));
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -57,11 +55,30 @@ namespace _70126_SyntaxSyndicate_Project2
 
         private void buttonPicture_Click(object sender, EventArgs e)
         {
+
             openFileDialog1.Filter = "Image Files|*.png;*.jpg;*.jpeg";
+
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                pictureBox.Image = Image.FromFile(openFileDialog1.FileName);
-                pathname.Text = openFileDialog1.FileName;
+                string filePath = openFileDialog1.FileName;
+
+                string folderPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Staff_Images");
+                if (!Directory.Exists(folderPath))
+                {
+                    Directory.CreateDirectory(folderPath);
+                }
+
+                string combineFilePath = Path.Combine(folderPath, Path.GetFileName(filePath));
+                File.Copy(filePath, combineFilePath, true);
+                pictureBox.Image = Image.FromFile(combineFilePath);
+
+                pathname.Text = combineFilePath;
+                //openFileDialog1.Filter = "Image Files|*.png;*.jpg;*.jpeg";
+                //if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                //{
+                //    pictureBox.Image = Image.FromFile(openFileDialog1.FileName);
+                //    pathname.Text = openFileDialog1.FileName;
+                //}
             }
         }
 
@@ -74,11 +91,12 @@ namespace _70126_SyntaxSyndicate_Project2
             staff.PhoneNumber = textBoxContact.Text;
             staff.Address = textBoxAddress.Text;
             staff.ID = textBoxCustID.Text;
-            staff.Role = comboBoxRole.SelectedItem.ToString();
+            staff.Role = (Role)Enum.Parse(typeof(Role), comboBoxRole.SelectedItem.ToString());
             staff.Photo = pathname.Text;
-            staff.Balance = 0;
+            staff.Balance = 0.00m;
             staff.Hours = 0;
             staff.ExtraHours = 0;
+
 
             string validation = Utils.FieldsValidation(staff);
 
@@ -87,17 +105,23 @@ namespace _70126_SyntaxSyndicate_Project2
             {
                 MessageBox.Show(validation, " Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
             }
-            
-            else if (string.IsNullOrWhiteSpace(staff.Role) || staff.Role == "Select Role")
+            else if (staff.Role == Role.Select_a_role)
             {
-                MessageBox.Show("Please select a plan", " Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                MessageBox.Show("Please select a Role", "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
             }
             else
             {
 
                 Utils utils = new Utils();
                 utils.SaveFile("StaffFile.txt", staff.DetailSaved(), "Staff details saved");
+                this.Close();
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            ShowStafff showStafff = new ShowStafff();
+            showStafff.ShowDialog();
         }
     }
 

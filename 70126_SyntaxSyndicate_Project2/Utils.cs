@@ -37,13 +37,18 @@ namespace _70126_SyntaxSyndicate_Project2
         // converting negative numbers to positive
         public static int ValidateEdge(int value)
         {
-            return value < 0 ? -value : value;
+            if (value < 0)
+            {
+                MessageBox.Show("Value cannot be negative.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return -1;
+            }
+            return value;
         }
 
         // plan list 
         public static List<string> Plans()
         {
-            List<string> plans = new List<string> { "Plan", "Basic", "Premium", "VIP" };
+            List<string> plans = new List<string> { "Plan","Premium", "Basic", "Business", "Student" };
             return plans;
         }
 
@@ -125,12 +130,12 @@ namespace _70126_SyntaxSyndicate_Project2
 
                 for (int i = 0; i < customerFile.Count; i++)
                 {
-                    string[] section = customerFile[i].Split('&');
+                    string[] section = customerFile[i].Split('^');
                     if (section[8].Trim() == customerId)
                     {
 
                         section[6] = newBalance.ToString("F2");
-                        customerFile[i] = string.Join("&", section);
+                        customerFile[i] = string.Join("^", section);
                         break;
                     }
                 }
@@ -145,6 +150,39 @@ namespace _70126_SyntaxSyndicate_Project2
         }
 
 
+        public static void UpdateCustomerBalanceAndSavingsInFile(string customerId, decimal newBalance, decimal newSavings)
+        {
+            string filePath = "CustomerFile.txt";
+            List<string> customerFile = new List<string>();
+
+            try
+            {
+                customerFile = File.ReadAllLines(filePath).ToList();
+
+                for (int i = 0; i < customerFile.Count; i++)
+                {
+                    string[] section = customerFile[i].Split('^');
+                    if (section[8].Trim() == customerId)
+                    {
+                        section[7] = newSavings.ToString("F2");
+
+                        section[6] = newBalance.ToString("F2");
+                        
+
+                        customerFile[i] = string.Join("^", section);
+                        break;
+                    }
+                }
+
+
+                File.WriteAllLines(filePath, customerFile);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while updating the file: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
 
         public static void UpdateCustomerInFile(string customerId, string name, string lastName, string email, string phoneNumber, string address, string plan, string photo, string accountNum, decimal balance, decimal savings)
             {
@@ -157,7 +195,7 @@ namespace _70126_SyntaxSyndicate_Project2
 
                 for (int i = 0; i < customerFile.Count; i++)
                 {
-                    string[] section = customerFile[i].Split('&');
+                    string[] section = customerFile[i].Split('^');
                     if (section[8].Trim() == customerId)
                     {
                         section[0] = name.Trim();
@@ -175,7 +213,7 @@ namespace _70126_SyntaxSyndicate_Project2
                         }
                         
 
-                        customerFile[i] = string.Join("&", section);
+                        customerFile[i] = string.Join("^", section);
                         break;
                     }
                 }
@@ -211,9 +249,10 @@ namespace _70126_SyntaxSyndicate_Project2
                 return false;
             }
         }
-
+       
         public static string FieldsValidation(Person person)
         {
+            string balance = person.Balance.ToString();
             if (person.Name == "Name")
             {
                 return "Please enter a name";
@@ -224,7 +263,7 @@ namespace _70126_SyntaxSyndicate_Project2
                 return "Please enter a last name";
             }
 
-            else if (person.PhoneNumber == "123456789" )
+            else if (person.PhoneNumber == "123456789")
             {
                 return "Please enter a phone number";
             }
@@ -250,7 +289,17 @@ namespace _70126_SyntaxSyndicate_Project2
             {
                 return "Please enter an address";
             }
-    
+            else if (person.Balance == 0)
+            {
+                MessageBox.Show("Please enter balance", "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+            }
+
+            else if (!decimal.TryParse(balance, out _))
+            {
+                MessageBox.Show("Enter numeric number for balance", "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+
+            }
+
             else if (person.Photo == "label3")
             {
                 return "Please upload a photo";
@@ -259,37 +308,42 @@ namespace _70126_SyntaxSyndicate_Project2
         }
 
      
-        public enum Role
+
+
+        public static void UpdateCustomerHours(string staffId, int newHours, int newExtraHours, decimal bal)
         {
-           
-            Manager = 50,      
-            Developer = 40,    
-            Designer = 35,    
-            Tester = 30,
-            Intern = 20
+            string filePath = "StaffFile.txt";
+            List<string> staffFile = new List<string>();
+
+            try
+            {
+                staffFile = File.ReadAllLines(filePath).ToList();
+
+                for (int i = 0; i < staffFile.Count; i++)
+                {
+                    string[] section = staffFile[i].Split('^');
+                    if (section[5].Trim() == staffId)
+                    {
+
+                        section[7] = newHours.ToString();
+                        section[8] = newExtraHours.ToString();
+                        section[10] = bal.ToString();
+
+                        staffFile[i] = string.Join("^", section);
+                        break;
+                    }
+                }
+
+
+                File.WriteAllLines(filePath, staffFile);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while updating the file: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        //public static class RoleExtensions
-        //{
-        //    public static decimal GetExtraHourRate(this Role role)
-        //    {
-        //        switch (role)
-        //        {
-        //            case Role.Manager:
-        //                return 75; // Extra hour rate
-        //            case Role.Developer:
-        //                return 60;
-        //            case Role.Designer:
-        //                return 50;
-        //            case Role.Tester:
-        //                return 45;
-        //            case Role.Intern:
-        //                return 25;
-        //            default:
-        //                return 0;
-        //        }
-        //    }
-        //}
+
     }
 
 }

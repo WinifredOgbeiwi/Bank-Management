@@ -26,14 +26,14 @@ namespace _70126_SyntaxSyndicate_Project2
             utils.SetPlaceholder(textBoxLastName, "Last Name");
             utils.SetPlaceholder(textBoxEmail, "your@email.com");
             utils.SetPlaceholder(textBoxAddress, "ul.street 1/w2,01-234,city");
-            utils.SetPlaceholder(textBoxBalance, "0000");
+           utils.SetPlaceholder(textBoxBalance, "0000");
             utils.SetPlaceholder(textBoxContact, "123456789");
             utils.SetComboBoxPlaceholder(comboBoxPlan);
 
             //Getting auto customer id and account number
             Customer customer = new Customer();
             customer.AccountNumber = Utils.GeneratedAccountNumber();
-            char[] letter = { 'A', 'B', 'C', 'D' };
+            char[] letter = { 'A', 'B', 'C', 'D','E' };
             customer.ID = Utils.GeneratedUserID(letter);   
             textBoxAcctNum.Text = customer.AccountNumber;
             textBoxCustID.Text = customer.ID;
@@ -48,8 +48,19 @@ namespace _70126_SyntaxSyndicate_Project2
             openFileDialog1.Filter = "Image Files|*.png;*.jpg;*.jpeg";
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                pictureBox.Image = Image.FromFile(openFileDialog1.FileName);
-                pathname.Text = openFileDialog1.FileName;
+                string filePath = openFileDialog1.FileName;
+
+                string folderPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Customer_Images");
+                if (!Directory.Exists(folderPath))
+                {
+                    Directory.CreateDirectory(folderPath);
+                }
+
+                string combineFilePath = Path.Combine(folderPath, Path.GetFileName(filePath));
+                File.Copy(filePath, combineFilePath, true);
+                pictureBox.Image = Image.FromFile(combineFilePath);
+
+                pathname.Text = combineFilePath;
             }
         }
 
@@ -64,6 +75,7 @@ namespace _70126_SyntaxSyndicate_Project2
             customer.Address = textBoxAddress.Text;
             customer.PhoneNumber = textBoxContact.Text;
             customer.Balance = Convert.ToDecimal(textBoxBalance.Text);
+
             customer.Plan = comboBoxPlan.SelectedItem.ToString();
             customer.Savings = Convert.ToDecimal(0);
             customer.AccountNumber = textBoxAcctNum.Text;
@@ -77,7 +89,7 @@ namespace _70126_SyntaxSyndicate_Project2
             {
                 MessageBox.Show(validation, " Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
             }
-
+          
             else if (string.IsNullOrWhiteSpace(customer.Plan) || customer.Plan == "Plan")
             {
                 MessageBox.Show("Please select a plan", " Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
@@ -87,6 +99,7 @@ namespace _70126_SyntaxSyndicate_Project2
        
                 Utils utils = new Utils();
                 utils.SaveFile("CustomerFile.txt", customer.DetailSaved(), "Customer details saved");
+                this.Close();
             }
         }
 

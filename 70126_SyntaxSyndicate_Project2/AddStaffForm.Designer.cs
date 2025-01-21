@@ -35,7 +35,6 @@
             this.labelContact = new System.Windows.Forms.Label();
             this.labelEmail = new System.Windows.Forms.Label();
             this.labelAddress = new System.Windows.Forms.Label();
-            this.labelBalance = new System.Windows.Forms.Label();
             this.labelPlan = new System.Windows.Forms.Label();
             this.custIDLabel = new System.Windows.Forms.Label();
             this.textBoxName = new System.Windows.Forms.TextBox();
@@ -43,14 +42,11 @@
             this.textBoxContact = new System.Windows.Forms.TextBox();
             this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.textBoxAddress = new System.Windows.Forms.TextBox();
-            this.textBoxBalance = new System.Windows.Forms.TextBox();
             this.textBoxCustID = new System.Windows.Forms.TextBox();
             this.comboBoxRole = new System.Windows.Forms.ComboBox();
             this.buttonPicture = new System.Windows.Forms.Button();
-            this.buttonExit_Add = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.button1 = new System.Windows.Forms.Button();
-            this.buttonSave = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pathname = new System.Windows.Forms.Label();
             this.pictureBox = new System.Windows.Forms.PictureBox();
@@ -67,7 +63,7 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(43, 741);
+            this.button3.Location = new System.Drawing.Point(43, 694);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(406, 62);
             this.button3.TabIndex = 55;
@@ -85,7 +81,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.Indigo;
-            this.button2.Location = new System.Drawing.Point(737, 741);
+            this.button2.Location = new System.Drawing.Point(737, 694);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(406, 62);
             this.button2.TabIndex = 56;
@@ -143,21 +139,11 @@
             this.labelAddress.TabIndex = 34;
             this.labelAddress.Text = "Address:";
             // 
-            // labelBalance
-            // 
-            this.labelBalance.AutoSize = true;
-            this.labelBalance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBalance.Location = new System.Drawing.Point(38, 538);
-            this.labelBalance.Name = "labelBalance";
-            this.labelBalance.Size = new System.Drawing.Size(105, 26);
-            this.labelBalance.TabIndex = 35;
-            this.labelBalance.Text = "Balance:";
-            // 
             // labelPlan
             // 
             this.labelPlan.AutoSize = true;
             this.labelPlan.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPlan.Location = new System.Drawing.Point(38, 605);
+            this.labelPlan.Location = new System.Drawing.Point(38, 524);
             this.labelPlan.Name = "labelPlan";
             this.labelPlan.Size = new System.Drawing.Size(68, 26);
             this.labelPlan.TabIndex = 36;
@@ -167,7 +153,7 @@
             // 
             this.custIDLabel.AutoSize = true;
             this.custIDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.custIDLabel.Location = new System.Drawing.Point(38, 669);
+            this.custIDLabel.Location = new System.Drawing.Point(38, 594);
             this.custIDLabel.Name = "custIDLabel";
             this.custIDLabel.Size = new System.Drawing.Size(100, 26);
             this.custIDLabel.TabIndex = 38;
@@ -176,7 +162,7 @@
             // textBoxName
             // 
             this.textBoxName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxName.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxName.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxName.ForeColor = System.Drawing.SystemColors.WindowText;
             this.textBoxName.Location = new System.Drawing.Point(320, 168);
             this.textBoxName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -188,7 +174,7 @@
             // textBoxLastName
             // 
             this.textBoxLastName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxLastName.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxLastName.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxLastName.Location = new System.Drawing.Point(320, 240);
             this.textBoxLastName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxLastName.Multiline = true;
@@ -199,7 +185,7 @@
             // textBoxContact
             // 
             this.textBoxContact.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxContact.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxContact.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxContact.Location = new System.Drawing.Point(320, 310);
             this.textBoxContact.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxContact.Multiline = true;
@@ -210,7 +196,7 @@
             // textBoxEmail
             // 
             this.textBoxEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxEmail.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxEmail.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxEmail.Location = new System.Drawing.Point(320, 379);
             this.textBoxEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxEmail.Multiline = true;
@@ -221,7 +207,7 @@
             // textBoxAddress
             // 
             this.textBoxAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxAddress.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxAddress.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxAddress.Location = new System.Drawing.Point(320, 454);
             this.textBoxAddress.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxAddress.Multiline = true;
@@ -229,24 +215,13 @@
             this.textBoxAddress.Size = new System.Drawing.Size(376, 42);
             this.textBoxAddress.TabIndex = 43;
             // 
-            // textBoxBalance
-            // 
-            this.textBoxBalance.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxBalance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxBalance.Location = new System.Drawing.Point(320, 526);
-            this.textBoxBalance.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBoxBalance.Multiline = true;
-            this.textBoxBalance.Name = "textBoxBalance";
-            this.textBoxBalance.Size = new System.Drawing.Size(376, 42);
-            this.textBoxBalance.TabIndex = 44;
-            // 
             // textBoxCustID
             // 
             this.textBoxCustID.BackColor = System.Drawing.Color.Plum;
             this.textBoxCustID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxCustID.Cursor = System.Windows.Forms.Cursors.No;
             this.textBoxCustID.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxCustID.Location = new System.Drawing.Point(320, 664);
+            this.textBoxCustID.Location = new System.Drawing.Point(320, 583);
             this.textBoxCustID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxCustID.Multiline = true;
             this.textBoxCustID.Name = "textBoxCustID";
@@ -256,12 +231,12 @@
             // 
             // comboBoxRole
             // 
-            this.comboBoxRole.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxRole.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxRole.FormattingEnabled = true;
-            this.comboBoxRole.Location = new System.Drawing.Point(320, 604);
+            this.comboBoxRole.Location = new System.Drawing.Point(320, 523);
             this.comboBoxRole.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBoxRole.Name = "comboBoxRole";
-            this.comboBoxRole.Size = new System.Drawing.Size(376, 33);
+            this.comboBoxRole.Size = new System.Drawing.Size(376, 36);
             this.comboBoxRole.TabIndex = 47;
             // 
             // buttonPicture
@@ -283,24 +258,6 @@
             this.buttonPicture.UseVisualStyleBackColor = false;
             this.buttonPicture.Click += new System.EventHandler(this.buttonPicture_Click);
             // 
-            // buttonExit_Add
-            // 
-            this.buttonExit_Add.BackColor = System.Drawing.Color.White;
-            this.buttonExit_Add.FlatAppearance.BorderColor = System.Drawing.Color.Indigo;
-            this.buttonExit_Add.FlatAppearance.BorderSize = 2;
-            this.buttonExit_Add.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkViolet;
-            this.buttonExit_Add.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Violet;
-            this.buttonExit_Add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonExit_Add.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonExit_Add.ForeColor = System.Drawing.Color.Indigo;
-            this.buttonExit_Add.Location = new System.Drawing.Point(692, 858);
-            this.buttonExit_Add.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.buttonExit_Add.Name = "buttonExit_Add";
-            this.buttonExit_Add.Size = new System.Drawing.Size(451, 78);
-            this.buttonExit_Add.TabIndex = 54;
-            this.buttonExit_Add.Text = "Exit";
-            this.buttonExit_Add.UseVisualStyleBackColor = false;
-            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
@@ -319,27 +276,10 @@
             this.button1.Text = "Add Staff";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // buttonSave
-            // 
-            this.buttonSave.BackColor = System.Drawing.Color.Indigo;
-            this.buttonSave.FlatAppearance.BorderSize = 0;
-            this.buttonSave.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkViolet;
-            this.buttonSave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Violet;
-            this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSave.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSave.ForeColor = System.Drawing.Color.White;
-            this.buttonSave.Location = new System.Drawing.Point(33, 858);
-            this.buttonSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(451, 78);
-            this.buttonSave.TabIndex = 50;
-            this.buttonSave.Text = "Save";
-            this.buttonSave.UseVisualStyleBackColor = false;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(329, 684);
+            this.label1.Location = new System.Drawing.Point(329, 603);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(0, 25);
             this.label1.TabIndex = 51;
@@ -373,21 +313,19 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1156, 829);
+            this.ClientSize = new System.Drawing.Size(1156, 1150);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pathname);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.pictureBox);
-            this.Controls.Add(this.buttonExit_Add);
             this.Controls.Add(this.buttonPicture);
             this.Controls.Add(this.comboBoxRole);
             this.Controls.Add(this.textBoxCustID);
-            this.Controls.Add(this.textBoxBalance);
             this.Controls.Add(this.textBoxAddress);
             this.Controls.Add(this.textBoxEmail);
             this.Controls.Add(this.textBoxContact);
@@ -395,7 +333,6 @@
             this.Controls.Add(this.textBoxName);
             this.Controls.Add(this.custIDLabel);
             this.Controls.Add(this.labelPlan);
-            this.Controls.Add(this.labelBalance);
             this.Controls.Add(this.labelAddress);
             this.Controls.Add(this.labelEmail);
             this.Controls.Add(this.labelContact);
@@ -424,7 +361,6 @@
         private System.Windows.Forms.Label labelContact;
         private System.Windows.Forms.Label labelEmail;
         private System.Windows.Forms.Label labelAddress;
-        private System.Windows.Forms.Label labelBalance;
         private System.Windows.Forms.Label labelPlan;
         private System.Windows.Forms.Label custIDLabel;
         private System.Windows.Forms.TextBox textBoxName;
@@ -432,14 +368,11 @@
         private System.Windows.Forms.TextBox textBoxContact;
         private System.Windows.Forms.TextBox textBoxEmail;
         private System.Windows.Forms.TextBox textBoxAddress;
-        private System.Windows.Forms.TextBox textBoxBalance;
         private System.Windows.Forms.TextBox textBoxCustID;
         private System.Windows.Forms.ComboBox comboBoxRole;
         private System.Windows.Forms.Button buttonPicture;
-        private System.Windows.Forms.Button buttonExit_Add;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label pathname;
         private System.Windows.Forms.PictureBox pictureBox;

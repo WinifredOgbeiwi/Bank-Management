@@ -157,9 +157,9 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImage = global::_70126_SyntaxSyndicate_Project2.Properties.Resources.Logo;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(165, -2);
+            this.pictureBox1.Location = new System.Drawing.Point(169, 1);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(158, 126);
+            this.pictureBox1.Size = new System.Drawing.Size(158, 103);
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 

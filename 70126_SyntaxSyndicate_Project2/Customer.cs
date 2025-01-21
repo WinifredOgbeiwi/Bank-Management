@@ -24,7 +24,7 @@ namespace _70126_SyntaxSyndicate_Project2
         public decimal Savings
         {
             get { return savings; }
-            set { savings = Utils.ValidateEdge(0); }
+            set { savings =Utils.ValidateEdge(Convert.ToInt16(value)); }
         }
         public string AccountNumber
         {
@@ -34,7 +34,7 @@ namespace _70126_SyntaxSyndicate_Project2
        
         public override string DetailSaved()
         {
-            return $"{Name}&{LastName}&{PhoneNumber}&{Email}&{Address}&{Plan}&{Balance}&{Savings}&{ID}&{AccountNumber}&{Photo}";
+            return $"{Name}^{LastName}^+48{PhoneNumber}^{Email}^{Address}^{Plan}^{Balance}^{Savings}^{ID}^{AccountNumber}^{Photo}";
         }
 
         }

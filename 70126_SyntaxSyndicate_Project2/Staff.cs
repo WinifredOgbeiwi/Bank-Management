@@ -9,35 +9,56 @@ using System.Xml.Linq;
 
 namespace _70126_SyntaxSyndicate_Project2
 {
-    internal class Staff:Person
-    {
-        private string role;
-        private int hours, extraHours;
-            private decimal salaryPH;
 
-        public string Role
+
+    public enum Role
+    {
+        Select_a_role = 0,
+        Intern = 20,
+        HR = 30,
+        Developer = 40,
+        Manager = 50,
+       
+    }
+
+    internal class Staff : Person
+    {
+        private Role role;
+        private int hours, extraHours;
+        private decimal salaryPh, extraSalaryPh;
+
+        public Role Role
         {
             get { return role; }
-            set {role = value;}
+            set
+            {
+                role = value;
+                SalaryPh = (decimal)role;
+            }
         }
         public int Hours
         {
             get { return hours; }
-            set { hours = Utils.ValidateEdge(0); }
+            set { hours = value; } 
         }
+
         public int ExtraHours
         {
             get { return extraHours; }
-            set { hours = Utils.ValidateEdge(0); }
+            set { extraHours = value; }
         }
-        public decimal SalaryPh
-        {
-            get { return salaryPH; }
-            set { salaryPH = Utils.ValidateEdge(0); }
+
+
+        public decimal SalaryPh { get; private set; }
+
+        public decimal ExtraSalaryPh {
+            get { return SalaryPh +(SalaryPh * 0.40M); }
         }
+
+
         public override string DetailSaved()
         {
-            return $"{Name}&{LastName}&{PhoneNumber}&{Email}&{Address}&{ID}&{Role}&{Photo}";
+            return $"{Name}^{LastName}^{Email}^+48{PhoneNumber}^{Address}^{ID}^{Role}^{Hours}^{ExtraHours}^{SalaryPh}^{Balance}^{Photo}";
         }
 
     }

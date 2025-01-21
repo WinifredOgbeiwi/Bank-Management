@@ -78,6 +78,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManageStaffs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageStaffs.Designer.cs">
+      <DependentUpon>ManageStaffs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +98,12 @@
     </Compile>
     <Compile Include="ShowCustomerForm.Designer.cs">
       <DependentUpon>ShowCustomerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShowStafff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowStafff.Designer.cs">
+      <DependentUpon>ShowStafff.cs</DependentUpon>
     </Compile>
     <Compile Include="ShowStaffForm.cs">
       <SubType>Form</SubType>
@@ -117,6 +129,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ManageStaffs.resx">
+      <DependentUpon>ManageStaffs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
@@ -132,6 +147,9 @@
     </Compile>
     <EmbeddedResource Include="ShowCustomerForm.resx">
       <DependentUpon>ShowCustomerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowStafff.resx">
+      <DependentUpon>ShowStafff.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ShowStaffForm.resx">
       <DependentUpon>ShowStaffForm.cs</DependentUpon>

@@ -45,8 +45,14 @@ namespace _70126_SyntaxSyndicate_Project2
             try
             {
                 Utils.UpdateCustomerInFile(textBoxCustID.Text, textBoxName.Text,textBoxLastName.Text,textBoxEmail.Text,textBoxContact.Text,textBoxAddress.Text,comboBoxPlan.SelectedItem.ToString(),pathname.Text,textBoxAcctNum.Text,Convert.ToDecimal(textBoxBalance.Text),Convert.ToDecimal(textBoxSavings.Text));
-                MessageBox.Show("Changes Updated!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            
+                
+               
+                if (MessageBox.Show("Changes Updated!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
+                {
+                    
+                    this.Close();
+                }
+
             }
             catch (FormatException)
             {

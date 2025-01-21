@@ -17,13 +17,13 @@ namespace _70126_SyntaxSyndicate_Project2
         public string Name
         {
             get { return name; }
-            set { name = value;}
+            set { name = Utils.capitalized(value);}
         }
 
         public string LastName
         {
             get { return lastName; }
-            set { lastName = value; }
+            set { lastName = Utils.capitalized(value); }
         }
 
         public string Address
@@ -56,7 +56,7 @@ namespace _70126_SyntaxSyndicate_Project2
         public decimal Balance
         {
             get { return balance; }
-            set { balance = Utils.ValidateEdge(Convert.ToInt16(value)); }
+            set { balance = value; }
         }
         public virtual string DetailSaved()
         {

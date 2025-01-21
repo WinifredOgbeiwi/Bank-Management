@@ -81,7 +81,7 @@ namespace _70126_SyntaxSyndicate_Project2
                 decimal newBalanceSaving = savingAmount + currentSaving;
                 customerSavings.Text = newBalanceSaving.ToString();
                 customerBalance.Text = newBalance.ToString();
-                Utils.UpdateCustomerBalanceInFile(customerID1.Text, newBalance);
+                Utils.UpdateCustomerBalanceAndSavingsInFile(customerID1.Text, newBalance, newBalanceSaving);
                 MessageBox.Show("Saving successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 textBoxSaving.Text = string.Empty;
             }
@@ -118,7 +118,7 @@ namespace _70126_SyntaxSyndicate_Project2
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
         private void labelCustomerID_Click(object sender, EventArgs e)

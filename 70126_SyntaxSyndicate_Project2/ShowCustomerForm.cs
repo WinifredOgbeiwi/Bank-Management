@@ -46,10 +46,10 @@ namespace _70126_SyntaxSyndicate_Project2
                 while (!fileReader.EndOfStream)
                 {
                     string customerDetails = fileReader.ReadLine();
-                    string[] section = customerDetails.Split('&');
+                    string[] section = customerDetails.Split('^');
 
-                    if (section.Length == 11) 
-                    {
+                    //if (section.Length == 11) 
+                    //{
                         customers.Add(new Customer
                         {
                             Name = section[0].Trim(),
@@ -64,11 +64,11 @@ namespace _70126_SyntaxSyndicate_Project2
                             AccountNumber = section[9].Trim(),
                             Photo = section[10].Trim()
                         });
-                    }
-                    else
-                    {
-                        MessageBox.Show("Customer data format is incorrect, skipping this entry.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    //}
+                    //else
+                    //{
+                       // MessageBox.Show("Customer data format is incorrect, skipping this entry.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //}
                 }
                 labelPagination.Text = $" {displayCustomerIndex + 1} from {customers.Count}";
                 fileReader.Close();
@@ -110,10 +110,9 @@ namespace _70126_SyntaxSyndicate_Project2
                  while (!fileReader.EndOfStream)
                  {
                      string customerDetails = fileReader.ReadLine();
-        string[] section = customerDetails.Split('&');
+        string[] section = customerDetails.Split('^');
 
-                     if (section.Length == 11)
-                     {
+                     
                          customers.Add(new Customer
                          {
                              Name = section[0].Trim(),
@@ -129,11 +128,7 @@ namespace _70126_SyntaxSyndicate_Project2
                              Photo = section[10].Trim()
                          });
     }
-                     else
-                     {
-                         MessageBox.Show("Customer data format is incorrect, skipping this entry.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                     }
-                 }
+                   
 
                  fileReader.Close();
 fileStream.Close();
