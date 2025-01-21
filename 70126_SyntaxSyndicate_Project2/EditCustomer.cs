@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,9 +13,13 @@ namespace _70126_SyntaxSyndicate_Project2
 {
     public partial class EditCustomer : Form
     {
-        public EditCustomer( string name, string lastName, string email,string phoneNumber, string address, string plan, string photo, string customerID, string accountNum, decimal balance, decimal savings )
+        private Form passwordForm;
+        private Action refreshdata;
+        public EditCustomer( Action _refreshData, Form prevform, string name, string lastName, string email,string phoneNumber, string address, string plan, string photo, string customerID, string accountNum, decimal balance, decimal savings, string password )
         {
             InitializeComponent();
+            refreshdata = _refreshData;
+            passwordForm = prevform;
             textBoxName.Text = name;
             textBoxLastName.Text = lastName;
             textBoxEmail.Text = email;
@@ -27,30 +32,53 @@ namespace _70126_SyntaxSyndicate_Project2
             textBoxSavings.Text = savings.ToString();
             textBoxCustID.Text = customerID;
             pictureBox.ImageLocation = photo;
+            textBoxPassword.Text = password;
     
         }
 
         private void buttonExit_Add_Click(object sender, EventArgs e)
         {
             this.Close();
+            passwordForm.Close();
         }
 
         private void EditCustomer_Load(object sender, EventArgs e)
         {
 
         }
+        private void buttonPicture_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.Filter = "Image Files|*.png;*.jpg;*.jpeg";
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = openFileDialog1.FileName;
 
+                string folderPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Customer_Images");
+                if (!Directory.Exists(folderPath))
+                {
+                    Directory.CreateDirectory(folderPath);
+                }
+
+                string combineFilePath = Path.Combine(folderPath, Path.GetFileName(filePath));
+                File.Copy(filePath, combineFilePath, true);
+                pictureBox.Image = Image.FromFile(combineFilePath);
+
+                pathname.Text = combineFilePath;
+            }
+        }
         private void buttonSave_Click(object sender, EventArgs e)
         {
             try
             {
-                Utils.UpdateCustomerInFile(textBoxCustID.Text, textBoxName.Text,textBoxLastName.Text,textBoxEmail.Text,textBoxContact.Text,textBoxAddress.Text,comboBoxPlan.SelectedItem.ToString(),pathname.Text,textBoxAcctNum.Text,Convert.ToDecimal(textBoxBalance.Text),Convert.ToDecimal(textBoxSavings.Text));
+                Utils.UpdateCustomerInFile(textBoxCustID.Text, textBoxName.Text,textBoxLastName.Text,textBoxEmail.Text,textBoxContact.Text,textBoxAddress.Text,comboBoxPlan.SelectedItem.ToString(),pathname.Text,textBoxAcctNum.Text,Convert.ToDecimal(textBoxBalance.Text),Convert.ToDecimal(textBoxSavings.Text), textBoxPassword.Text);
                 
                
                 if (MessageBox.Show("Changes Updated!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
                 {
                     
                     this.Close();
+                    passwordForm.Close();
+                    refreshdata?.Invoke();
                 }
 
             }
@@ -65,14 +93,6 @@ namespace _70126_SyntaxSyndicate_Project2
 
         }
 
-        private void buttonPicture_Click(object sender, EventArgs e)
-        {
-            openFileDialog1.Filter = "Image Files|*.png;*.jpg;*.jpeg";
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                pictureBox.Image = Image.FromFile(openFileDialog1.FileName);
-                pathname.Text = openFileDialog1.FileName;
-            }
-        }
+    
     }
 }

@@ -54,6 +54,8 @@
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.buttonSave = new System.Windows.Forms.Button();
             this.buttonExit_Add = new System.Windows.Forms.Button();
+            this.textBoxPassword = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -131,17 +133,18 @@
             // 
             this.labelAcctNum.AutoSize = true;
             this.labelAcctNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAcctNum.Location = new System.Drawing.Point(34, 546);
+            this.labelAcctNum.Location = new System.Drawing.Point(34, 609);
             this.labelAcctNum.Name = "labelAcctNum";
             this.labelAcctNum.Size = new System.Drawing.Size(196, 26);
             this.labelAcctNum.TabIndex = 8;
             this.labelAcctNum.Text = "Account Number:";
+            this.labelAcctNum.Click += new System.EventHandler(this.labelAcctNum_Click);
             // 
             // custIDLabel
             // 
             this.custIDLabel.AutoSize = true;
             this.custIDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.custIDLabel.Location = new System.Drawing.Point(34, 595);
+            this.custIDLabel.Location = new System.Drawing.Point(34, 658);
             this.custIDLabel.Name = "custIDLabel";
             this.custIDLabel.Size = new System.Drawing.Size(153, 26);
             this.custIDLabel.TabIndex = 9;
@@ -214,7 +217,7 @@
             this.textBoxAcctNum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxAcctNum.Cursor = System.Windows.Forms.Cursors.No;
             this.textBoxAcctNum.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxAcctNum.Location = new System.Drawing.Point(288, 538);
+            this.textBoxAcctNum.Location = new System.Drawing.Point(288, 601);
             this.textBoxAcctNum.Multiline = true;
             this.textBoxAcctNum.Name = "textBoxAcctNum";
             this.textBoxAcctNum.ReadOnly = true;
@@ -227,7 +230,7 @@
             this.textBoxCustID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxCustID.Cursor = System.Windows.Forms.Cursors.No;
             this.textBoxCustID.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxCustID.Location = new System.Drawing.Point(288, 595);
+            this.textBoxCustID.Location = new System.Drawing.Point(288, 658);
             this.textBoxCustID.Multiline = true;
             this.textBoxCustID.Name = "textBoxCustID";
             this.textBoxCustID.ReadOnly = true;
@@ -320,7 +323,7 @@
             this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSave.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSave.ForeColor = System.Drawing.Color.White;
-            this.buttonSave.Location = new System.Drawing.Point(30, 685);
+            this.buttonSave.Location = new System.Drawing.Point(30, 723);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(406, 62);
             this.buttonSave.TabIndex = 22;
@@ -338,13 +341,33 @@
             this.buttonExit_Add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonExit_Add.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonExit_Add.ForeColor = System.Drawing.Color.Indigo;
-            this.buttonExit_Add.Location = new System.Drawing.Point(623, 685);
+            this.buttonExit_Add.Location = new System.Drawing.Point(623, 723);
             this.buttonExit_Add.Name = "buttonExit_Add";
             this.buttonExit_Add.Size = new System.Drawing.Size(406, 62);
             this.buttonExit_Add.TabIndex = 29;
             this.buttonExit_Add.Text = "Exit";
             this.buttonExit_Add.UseVisualStyleBackColor = false;
             this.buttonExit_Add.Click += new System.EventHandler(this.buttonExit_Add_Click);
+            // 
+            // textBoxPassword
+            // 
+            this.textBoxPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxPassword.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPassword.Location = new System.Drawing.Point(288, 544);
+            this.textBoxPassword.Multiline = true;
+            this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.Size = new System.Drawing.Size(339, 34);
+            this.textBoxPassword.TabIndex = 30;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(34, 546);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(123, 26);
+            this.label2.TabIndex = 31;
+            this.label2.Text = "Password:";
             // 
             // AddCustomerForm
             // 
@@ -353,7 +376,9 @@
             this.AutoScroll = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1053, 829);
+            this.ClientSize = new System.Drawing.Size(1053, 931);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.buttonExit_Add);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pathname);
@@ -419,5 +444,7 @@
         private System.Windows.Forms.Label pathname;
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.Button buttonExit_Add;
+        private System.Windows.Forms.TextBox textBoxPassword;
+        private System.Windows.Forms.Label label2;
     }
 }

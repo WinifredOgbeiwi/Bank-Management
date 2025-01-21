@@ -11,7 +11,7 @@ namespace _70126_SyntaxSyndicate_Project2
     internal class Person
     {
 
-        private string name, lastName, photo, address, email, id, phoneNumber;
+        private string name, lastName, photo, address, email, id, phoneNumber, password;
         private decimal balance;
 
         public string Name
@@ -46,6 +46,11 @@ namespace _70126_SyntaxSyndicate_Project2
         {
             get { return phoneNumber; }
             set { phoneNumber = value; }
+        }
+        public string Password
+        {
+            get { return password; }
+            set { password = value; }
         }
 
         public virtual string ID

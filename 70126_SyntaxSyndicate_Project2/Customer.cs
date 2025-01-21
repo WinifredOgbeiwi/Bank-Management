@@ -31,10 +31,10 @@ namespace _70126_SyntaxSyndicate_Project2
             get { return accountNumber; }
             set { accountNumber = value; }
         }
-       
+
         public override string DetailSaved()
         {
-            return $"{Name}^{LastName}^+48{PhoneNumber}^{Email}^{Address}^{Plan}^{Balance}^{Savings}^{ID}^{AccountNumber}^{Photo}";
+            return $"{Name}^{LastName}^+48{PhoneNumber}^{Email}^{Address}^{Plan}^{Balance}^{Savings}^{ID}^{AccountNumber}^{Photo}^{Password}";
         }
 
         }

@@ -184,7 +184,7 @@ namespace _70126_SyntaxSyndicate_Project2
         }
 
 
-        public static void UpdateCustomerInFile(string customerId, string name, string lastName, string email, string phoneNumber, string address, string plan, string photo, string accountNum, decimal balance, decimal savings)
+        public static void UpdateCustomerInFile(string customerId, string name, string lastName, string email, string phoneNumber, string address, string plan, string photo, string accountNum, decimal balance, decimal savings, string password)
             {
             string filePath = "CustomerFile.txt";
             List<string> customerFile = new List<string>();
@@ -207,6 +207,7 @@ namespace _70126_SyntaxSyndicate_Project2
                         section[6] = balance.ToString();
                         section[7] = savings.ToString();
                         section[9] = accountNum.Trim();
+                        section[11] = password.Trim();
                         if (!string.IsNullOrEmpty(photo))
                         {
                             section[10] = photo.Trim();
@@ -271,6 +272,14 @@ namespace _70126_SyntaxSyndicate_Project2
             else if (person.PhoneNumber.Length != 9)
             {
                 return "Phone Number must be 9 characters";
+            }
+            else if (person.Password == "Password")
+            {
+                return "Please enter password ";
+            }
+            else if (person.Password.Length > 5)
+            {
+                return "Password  must be grater than 5 characters";
             }
 
             else if (!person.PhoneNumber.All(char.IsDigit))

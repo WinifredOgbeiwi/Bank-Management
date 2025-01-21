@@ -36,6 +36,7 @@ namespace _70126_SyntaxSyndicate_Project2
             customerAcctNum.Text = customer.AccountNumber;
             customerID.Text = customer.ID;
             pictureBox1.ImageLocation = customer.Photo;
+            
         }
         private void ShowCustomer_Load(object sender, EventArgs e)
         {
@@ -62,7 +63,8 @@ namespace _70126_SyntaxSyndicate_Project2
                             Savings = Convert.ToDecimal(section[7].Trim()),
                             ID = section[8].Trim(),
                             AccountNumber = section[9].Trim(),
-                            Photo = section[10].Trim()
+                            Photo = section[10].Trim(),
+                            Password = section[11].Trim()
                         });
                     //}
                     //else
@@ -199,10 +201,15 @@ private void buttonControlBal_Click(object sender, EventArgs e)
 
         private void buttonCustomerEdit_Click(object sender, EventArgs e)
         {
+
             Customer selectedCustomer = customers[displayCustomerIndex];
-            EditCustomer editCustomer = new EditCustomer(selectedCustomer.Name,selectedCustomer.LastName, selectedCustomer.Email,selectedCustomer.PhoneNumber,selectedCustomer.Address, selectedCustomer.Plan, selectedCustomer.Photo,selectedCustomer.ID,selectedCustomer.AccountNumber,selectedCustomer.Balance, selectedCustomer.Savings );
-            editCustomer.ShowDialog();
-            RefreshCustomerData();
+            PasswordForm passwordForm = new PasswordForm(this.RefreshCustomerData, selectedCustomer.Name, selectedCustomer.LastName, selectedCustomer.Email, selectedCustomer.PhoneNumber, selectedCustomer.Address, selectedCustomer.Plan, selectedCustomer.Photo, selectedCustomer.ID, selectedCustomer.AccountNumber, selectedCustomer.Balance, selectedCustomer.Savings, selectedCustomer.Password);
+            passwordForm.ShowDialog();
+           
+            //EditCustomer editCustomer = new EditCustomer(selectedCustomer.Name,selectedCustomer.LastName, selectedCustomer.Email,selectedCustomer.PhoneNumber,selectedCustomer.Address, selectedCustomer.Plan, selectedCustomer.Photo,selectedCustomer.ID,selectedCustomer.AccountNumber,selectedCustomer.Balance, selectedCustomer.Savings, selectedCustomer.Password );
+            //editCustomer.ShowDialog();
+            //RefreshCustomerData();
+        
 
 
         }

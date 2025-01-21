@@ -28,6 +28,7 @@ namespace _70126_SyntaxSyndicate_Project2
             utils.SetPlaceholder(textBoxAddress, "ul.street 1/w2,01-234,city");
            utils.SetPlaceholder(textBoxBalance, "0000");
             utils.SetPlaceholder(textBoxContact, "123456789");
+            utils.SetPlaceholder(textBoxPassword, "Password");
             utils.SetComboBoxPlaceholder(comboBoxPlan);
 
             //Getting auto customer id and account number
@@ -75,12 +76,13 @@ namespace _70126_SyntaxSyndicate_Project2
             customer.Address = textBoxAddress.Text;
             customer.PhoneNumber = textBoxContact.Text;
             customer.Balance = Convert.ToDecimal(textBoxBalance.Text);
-
+            customer.Password = textBoxPassword.Text;
             customer.Plan = comboBoxPlan.SelectedItem.ToString();
             customer.Savings = Convert.ToDecimal(0);
             customer.AccountNumber = textBoxAcctNum.Text;
             customer.ID = textBoxCustID.Text;
             customer.Photo = pathname.Text;
+            customer.Password = textBoxPassword.Text;
 
             string validation = Utils.FieldsValidation(customer);
                string balanceText = customer.Balance.ToString();
@@ -106,6 +108,11 @@ namespace _70126_SyntaxSyndicate_Project2
         private void buttonExit_Add_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void labelAcctNum_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
