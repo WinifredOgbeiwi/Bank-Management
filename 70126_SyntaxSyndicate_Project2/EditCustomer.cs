@@ -49,22 +49,7 @@ namespace _70126_SyntaxSyndicate_Project2
         private void buttonPicture_Click(object sender, EventArgs e)
         {
             openFileDialog1.Filter = "Image Files|*.png;*.jpg;*.jpeg";
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                string filePath = openFileDialog1.FileName;
-
-                string folderPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Customer_Images");
-                if (!Directory.Exists(folderPath))
-                {
-                    Directory.CreateDirectory(folderPath);
-                }
-
-                string combineFilePath = Path.Combine(folderPath, Path.GetFileName(filePath));
-                File.Copy(filePath, combineFilePath, true);
-                pictureBox.Image = Image.FromFile(combineFilePath);
-
-                pathname.Text = combineFilePath;
-            }
+            
         }
         private void buttonSave_Click(object sender, EventArgs e)
         {
